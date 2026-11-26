@@ -1,0 +1,7 @@
+{
+  "name": "site-camila-pedron",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Site estatico da Dra. Camila Ananias Pedron (HTML e CSS, sem build)",
+  "scripts": { "dev": "npx serve ." }
+}

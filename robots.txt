@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://camilapedronadvocacia.com.br/sitemap.xml

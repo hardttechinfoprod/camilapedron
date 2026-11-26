@@ -1,1631 +1,2616 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dra. Camila Ananias Pedron | Advocacia Tributária</title>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Camila Ananias Pedron, advogada tributarista (OAB/SP 545.089). Análise jurídica de débitos tributários de empresas. Atendimento online em todo o Brasil, a partir de Ourinhos/SP.">
+<title>Camila Ananias Pedron | Advogada Tributarista</title>
+
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://camilapedronadvocacia.com.br/">
+<meta name="theme-color" content="#4a1410">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Camila Ananias Pedron, advogada tributarista">
+<meta property="og:description" content="Análise jurídica de débitos tributários de empresas. Atendimento online em todo o Brasil, a partir de Ourinhos/SP.">
+<meta property="og:url" content="https://camilapedronadvocacia.com.br/">
+<meta property="og:image" content="https://camilapedronadvocacia.com.br/assets/og.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LegalService",
+  "name": "Camila Ananias Pedron - Advocacia Tributária",
+  "description": "Análise jurídica de débitos tributários de empresas, regularização fiscal, recuperação de tributos no Simples Nacional, isenção de imposto de renda e planejamento tributário.",
+  "url": "https://camilapedronadvocacia.com.br/",
+  "telephone": "+55-14-99748-5486",
+  "areaServed": "BR",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Ourinhos",
+    "addressRegion": "SP",
+    "addressCountry": "BR"
+  },
+  "sameAs": [
+    "https://www.instagram.com/camilapedron_tributario/"
+  ]
+}
+</script>
+
 <style>
   :root {
-    --marsala: #4a1a16;
-    --marsala-dark: #2e100d;
-    --marsala-mid: #6b2720;
-    --dourado: #d0ad92;
-    --dourado-light: #e8d4c0;
-    --dourado-pale: #f5ede4;
-    --creme: #f0ede6;
-    --branco: #fefefe;
-    --texto: #2a1a18;
-    --texto-muted: #7a6560;
+    --vinho: #4a1410;
+    --vinho-hover: #35100c;
+    --marfim: #f7f2e8;
+    --creme: #fffdf8;
+    --areia: #efe6d6;
+    --cobre: #b97a4a;
+    --cobre-escuro: #7a4a26;
+    --tinta: #2a1210;
+    --texto-secundario: #54443b;
+
+    --borda-suave: rgba(185, 122, 74, 0.42);
+    --borda-media: rgba(185, 122, 74, 0.72);
+    --sombra-sutil: 0 10px 30px rgba(74, 20, 16, 0.06);
+    --sombra-card: 0 14px 36px rgba(74, 20, 16, 0.09);
+
+    --font-serif: 'Cormorant Garamond', Georgia, serif;
+    --font-sans: 'Raleway', 'Helvetica Neue', Arial, sans-serif;
+
+    --radius: 4px;
+    --container: 1140px;
+    --transition: 220ms cubic-bezier(0.22, 1, 0.36, 1);
   }
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
 
-  html { scroll-behavior: smooth; }
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
 
   body {
-    font-family: 'Raleway', sans-serif;
-    background: var(--branco);
-    color: var(--texto);
+    margin: 0;
+    position: relative;
+    background-color: var(--marfim);
+    color: var(--tinta);
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.6;
+    font-variant-numeric: lining-nums proportional-nums;
+    -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
   }
 
-  /* TYPOGRAPHY */
-  .cinzel { font-family: 'Cinzel', serif; }
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
 
-  h1, h2, h3 { font-family: 'Cinzel', serif; }
+  a {
+    color: inherit;
+  }
 
-  /* NAVBAR */
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
+  a:focus-visible,
+  summary:focus-visible,
+  button:focus-visible {
+    outline: 3px solid var(--cobre);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  section[id],
+  div[id] {
+    scroll-margin-top: 84px;
+  }
+
+  /* Skip Link (Acessibilidade) */
+  .skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 12px;
     z-index: 100;
-    background: rgba(254, 254, 254, 0.95);
-    backdrop-filter: blur(8px);
-    border-bottom: 1px solid rgba(208, 173, 146, 0.25);
-    padding: 0 5%;
-    height: 72px;
+    background: var(--vinho);
+    color: var(--marfim);
+    padding: 12px 20px;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    border-radius: var(--radius);
+  }
+
+  .skip-link:focus {
+    left: 16px;
+  }
+
+  /* Layout Container */
+  .wrap {
+    width: 100%;
+    max-width: var(--container);
+    margin: 0 auto;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  .section {
+    padding-top: 76px;
+    padding-bottom: 76px;
+    overflow-x: clip;
+  }
+
+  .section--areia {
+    background: linear-gradient(
+      180deg,
+      var(--marfim) 0%,
+      var(--areia) 96px,
+      var(--areia) calc(100% - 96px),
+      var(--marfim) 100%
+    );
+  }
+
+  .section--marfim {
+    background-color: var(--marfim);
+  }
+
+  .section--vinho {
+    position: relative;
+    background: radial-gradient(ellipse at 78% 45%, rgba(185, 122, 74, 0.14) 0%, rgba(74, 20, 16, 0) 60%), var(--vinho);
+    color: var(--marfim);
+    padding-top: 96px;
+    padding-bottom: 96px;
+  }
+
+  .section--vinho::before,
+  .section--vinho::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 44px;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .section--vinho::before {
+    top: 0;
+    background: linear-gradient(180deg, var(--marfim) 0%, rgba(74, 20, 16, 0) 100%);
+  }
+
+  .section--vinho::after {
+    bottom: 0;
+    background: linear-gradient(180deg, rgba(74, 20, 16, 0) 0%, var(--creme) 100%);
+  }
+
+  .section--vinho > .wrap {
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Efeito suave de transparência ao rolar */
+  .has-reveal [data-reveal] {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 720ms cubic-bezier(0.22, 1, 0.36, 1),
+                transform 720ms cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: var(--reveal-delay, 0ms);
+    will-change: opacity, transform;
+  }
+
+  .has-reveal [data-reveal].is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    will-change: auto;
+  }
+
+  /* Trilha estrutural minimalista do header ao footer */
+  .page-spine {
+    position: absolute;
+    left: max(10px, calc(50% - 606px));
+    top: 0;
+    width: 32px;
+    pointer-events: none;
+    z-index: 15;
+    overflow: visible;
+  }
+
+  .page-spine-svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    overflow: visible;
+  }
+
+  .spine-ghost {
+    fill: none;
+    stroke: var(--cobre);
+    stroke-width: 1;
+    opacity: 0.16;
+  }
+
+  .spine-active {
+    fill: none;
+    stroke: var(--cobre);
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    opacity: 0.85;
+  }
+
+  .spine-tick {
+    fill: none;
+    stroke: var(--cobre);
+    stroke-width: 1.1;
+    opacity: 0.2;
+    transition: opacity 420ms ease, stroke 420ms ease;
+  }
+
+  .spine-node {
+    fill: var(--marfim);
+    stroke: var(--cobre);
+    stroke-width: 1.3;
+    opacity: 0.28;
+    transition: opacity 420ms ease, fill 420ms ease, transform 420ms ease;
+    transform-box: fill-box;
+    transform-origin: center;
+  }
+
+  .spine-milestone.is-reached .spine-tick {
+    opacity: 0.82;
+  }
+
+  .spine-milestone.is-reached .spine-node {
+    opacity: 1;
+    fill: var(--cobre);
+    transform: scale(1.18);
+  }
+
+  .spine-cursor-halo {
+    fill: rgba(185, 122, 74, 0.28);
+    transition: opacity 250ms ease;
+  }
+
+  .spine-cursor {
+    fill: var(--vinho);
+    stroke: var(--cobre);
+    stroke-width: 1.5;
+    transition: opacity 250ms ease;
+  }
+
+  /* Desenhos de traçados ao rolar com movimento contínuo */
+  @keyframes trace-flow {
+    0% {
+      stroke-dashoffset: 1244;
+    }
+    100% {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  @keyframes diamond-breathe {
+    0%, 100% {
+      transform: scale(1) rotate(0deg);
+      opacity: 0.58;
+    }
+    50% {
+      transform: scale(1.16) rotate(45deg);
+      opacity: 0.92;
+    }
+  }
+
+  .scroll-trace {
+    width: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    line-height: 0;
+  }
+
+  .scroll-trace svg {
+    width: 100%;
+    height: auto;
+    display: block;
+    will-change: transform;
+  }
+
+  .trace-line {
+    fill: none;
+    stroke: var(--cobre);
+    stroke-width: 1.35;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    opacity: 0.65;
+  }
+
+  .trace-line--soft {
+    opacity: 0.34;
+    stroke-width: 1;
+  }
+
+  .trace-line--light {
+    stroke: var(--areia);
+    opacity: 0.48;
+  }
+
+  .trace-node {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: diamond-breathe 5.5s ease-in-out infinite;
+  }
+
+  .trace-shimmer {
+    fill: none;
+    stroke: var(--creme);
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-dasharray: 44 1200;
+    opacity: 0.72;
+    animation: trace-flow 6.5s linear infinite;
+    pointer-events: none;
+  }
+
+  .section--marfim .trace-shimmer,
+  .site-footer .trace-shimmer {
+    stroke: var(--cobre-escuro);
+    opacity: 0.45;
+  }
+
+  .section--vinho .trace-shimmer {
+    stroke: var(--marfim);
+    opacity: 0.85;
+  }
+
+  .steps-track-wrap {
+    margin-bottom: 18px;
+  }
+
+  .portrait-trace-svg {
+    position: absolute;
+    inset: -12px -12px -12px -12px;
+    width: calc(100% + 24px);
+    height: calc(100% + 24px);
+    pointer-events: none;
+    z-index: 4;
+  }
+
+  .footer-trace {
+    margin-bottom: 24px;
+  }
+
+  /* Tipografia Editorial */
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--cobre-escuro);
+    margin: 0 0 12px;
+  }
+
+  .eyebrow::before {
+    content: "";
+    width: 24px;
+    height: 1px;
+    background-color: var(--cobre);
+    flex-shrink: 0;
+    transform-origin: left;
+    transition: transform 640ms cubic-bezier(0.22, 1, 0.36, 1) 120ms;
+  }
+
+  .has-reveal [data-reveal] .eyebrow::before {
+    transform: scaleX(0);
+  }
+
+  .has-reveal [data-reveal].is-visible .eyebrow::before {
+    transform: scaleX(1);
+  }
+
+  .section--vinho .eyebrow {
+    color: var(--areia);
+  }
+
+  .h1, .h2, .h3 {
+    font-family: var(--font-serif);
+    font-weight: 600;
+    color: var(--vinho);
+    margin: 0;
+    letter-spacing: -0.012em;
+  }
+
+  .h1 {
+    font-size: clamp(35px, 4.6vw, 54px);
+    line-height: 1.05;
+  }
+
+  .h2 {
+    font-size: clamp(29px, 3.4vw, 40px);
+    line-height: 1.1;
+  }
+
+  .h3 {
+    font-size: clamp(23px, 2.2vw, 27px);
+    line-height: 1.18;
+  }
+
+  .section-head {
+    max-width: 720px;
+    margin-bottom: 40px;
+  }
+
+  .section-lead {
+    margin: 12px 0 0;
+    font-size: 17px;
+    line-height: 1.65;
+    color: var(--texto-secundario);
+  }
+
+  /* Botões e CTAs */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 52px;
+    padding: 14px 26px;
+    border: 1px solid transparent;
+    border-radius: var(--radius);
+    background-color: var(--vinho);
+    color: var(--marfim);
+    font-family: var(--font-sans);
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color var(--transition), transform var(--transition), box-shadow var(--transition), border-color var(--transition), color var(--transition);
+  }
+
+  .btn:hover {
+    background-color: var(--vinho-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(74, 20, 16, 0.18);
+  }
+
+  .btn:active {
+    transform: translateY(0);
+  }
+
+  .btn--compact {
+    min-height: 44px;
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  .btn--ghost {
+    background-color: transparent;
+    color: var(--vinho);
+    border-color: var(--borda-media);
+  }
+
+  .btn--ghost:hover {
+    background-color: var(--creme);
+    border-color: var(--vinho);
+    box-shadow: var(--sombra-sutil);
+  }
+
+  .btn--light {
+    background-color: var(--marfim);
+    color: var(--vinho);
+    border-color: var(--marfim);
+  }
+
+  .btn--light:hover {
+    background-color: var(--creme);
+    color: var(--vinho-hover);
+    box-shadow: 0 10px 24px rgba(42, 18, 16, 0.28);
+  }
+
+  .btn-icon {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+  }
+
+  /* Cabeçalho Sticky com Transparência */
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    background-color: rgba(247, 242, 232, 0.72);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: background-color 320ms ease, box-shadow 320ms ease;
+  }
+
+  .site-header.is-scrolled {
+    background-color: rgba(255, 253, 248, 0.86);
+    box-shadow: 0 8px 30px rgba(74, 20, 16, 0.06);
+  }
+
+  .header-inner {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    transition: box-shadow 0.3s;
+    gap: 20px;
+    padding-top: 14px;
+    padding-bottom: 14px;
   }
 
-  nav.scrolled {
-    box-shadow: 0 2px 20px rgba(74, 26, 22, 0.08);
-  }
-
-  .nav-logo {
-    display: flex;
+  .brand {
+    display: inline-flex;
     align-items: center;
     gap: 12px;
+    text-decoration: none;
+    color: var(--vinho);
+    flex-shrink: 0;
   }
 
-  .nav-monogram {
-    width: 40px;
-    height: 40px;
-    border: 1.5px solid var(--dourado);
+  .brand-mark {
+    width: 44px;
+    height: 44px;
+    border: 1px solid var(--cobre);
     border-radius: 50%;
+    background-color: var(--marfim);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Cinzel', serif;
-    font-size: 13px;
-    color: var(--dourado);
-    letter-spacing: 1px;
+    font-family: var(--font-serif);
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: var(--vinho);
+    transition: background-color var(--transition), color var(--transition);
   }
 
-  .nav-name {
+  .brand:hover .brand-mark {
+    background-color: var(--vinho);
+    color: var(--marfim);
+  }
+
+  .brand-text {
     display: flex;
     flex-direction: column;
-    line-height: 1.2;
+    line-height: 1.25;
   }
 
-  .nav-name strong {
-    font-family: 'Cinzel', serif;
-    font-size: 11px;
-    letter-spacing: 2px;
-    color: var(--marsala);
-    text-transform: uppercase;
+  .brand-name {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--vinho);
   }
 
-  .nav-name span {
-    font-size: 9px;
-    letter-spacing: 3px;
-    color: var(--dourado);
-    text-transform: uppercase;
+  .brand-role {
+    font-size: 13px;
     font-weight: 500;
+    color: var(--cobre-escuro);
   }
 
-  .nav-links {
+  .header-nav {
     display: flex;
-    gap: 36px;
-    list-style: none;
+    align-items: center;
+    gap: 24px;
   }
 
-  .nav-links a {
-    font-size: 11px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--texto-muted);
+  .header-nav a {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--texto-secundario);
     text-decoration: none;
-    font-weight: 500;
-    transition: color 0.2s;
-  }
-
-  .nav-links a:hover { color: var(--marsala); }
-
-  .nav-cta {
-    background: var(--marsala);
-    color: var(--dourado-light) !important;
-    padding: 10px 24px !important;
-    border: none !important;
-    font-family: 'Cinzel', serif;
-    font-size: 10px !important;
-    letter-spacing: 2px;
-    transition: background 0.2s !important;
-  }
-
-  .nav-cta:hover { background: var(--marsala-mid) !important; color: var(--dourado-light) !important; }
-
-  /* HERO */
-  .hero {
-    min-height: 100vh;
-    background: var(--marsala-dark);
+    padding: 6px 0;
     position: relative;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    overflow: hidden;
+    transition: color var(--transition);
+    white-space: nowrap;
   }
 
-  .hero::before {
-    content: '';
+  .header-nav a::after {
+    content: "";
     position: absolute;
-    inset: 0;
-    background:
-      radial-gradient(ellipse 60% 80% at 70% 50%, rgba(74, 26, 22, 0.6) 0%, transparent 70%),
-      radial-gradient(ellipse 40% 40% at 15% 20%, rgba(208, 173, 146, 0.08) 0%, transparent 60%);
-    pointer-events: none;
+    left: 0;
+    right: 0;
+    bottom: 2px;
+    height: 1.5px;
+    background-color: var(--cobre);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--transition);
+  }
+
+  .header-nav a:hover {
+    color: var(--vinho);
+  }
+
+  .header-nav a:hover::after {
+    transform: scaleX(1);
+  }
+
+  /* Sub-navegação rápida no mobile */
+  .mobile-subnav {
+    display: none;
+  }
+
+  /* Hero */
+  .hero {
+    padding-top: 56px;
+    padding-bottom: 64px;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+    gap: 48px;
+    align-items: center;
   }
 
   .hero-content {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    padding: 120px 7% 80px;
-    position: relative;
-    z-index: 2;
+    align-items: flex-start;
+    gap: 22px;
   }
 
-  .hero-tag {
+  .hero-badge {
     display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 36px;
-    opacity: 0;
-    animation: fadeUp 0.8s 0.2s forwards;
-  }
-
-  .hero-tag::before {
-    content: '';
-    display: block;
-    width: 32px;
-    height: 1px;
-    background: var(--dourado);
-  }
-
-  .hero-tag span {
-    font-size: 10px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--dourado);
-    font-weight: 600;
-  }
-
-  .hero h1 {
-    font-size: clamp(32px, 4vw, 56px);
-    font-weight: 400;
-    color: var(--branco);
-    line-height: 1.25;
-    margin-bottom: 28px;
-    opacity: 0;
-    animation: fadeUp 0.8s 0.4s forwards;
-  }
-
-  .hero h1 em {
-    font-style: normal;
-    color: var(--dourado);
-    display: block;
-  }
-
-  .hero-sub {
-    font-size: 15px;
-    line-height: 1.8;
-    color: rgba(254, 254, 254, 0.65);
-    max-width: 440px;
-    margin-bottom: 52px;
-    font-weight: 300;
-    opacity: 0;
-    animation: fadeUp 0.8s 0.6s forwards;
-  }
-
-  .hero-ctas {
-    display: flex;
-    gap: 16px;
     flex-wrap: wrap;
-    opacity: 0;
-    animation: fadeUp 0.8s 0.8s forwards;
-  }
-
-  .btn-primary {
-    display: inline-flex;
     align-items: center;
-    gap: 10px;
-    background: var(--dourado);
-    color: var(--marsala-dark);
-    padding: 16px 32px;
-    font-family: 'Cinzel', serif;
-    font-size: 11px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    text-decoration: none;
+    gap: 8px;
+    padding: 7px 14px;
+    background-color: var(--creme);
+    border: 1px solid var(--borda-suave);
+    border-radius: 999px;
+    font-size: 13px;
     font-weight: 600;
-    transition: all 0.25s;
+    color: var(--cobre-escuro);
   }
 
-  .btn-primary:hover {
-    background: var(--dourado-light);
-    transform: translateY(-1px);
+  .hero-badge-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--cobre);
   }
 
-  .btn-secondary {
+  .hero-subtitle {
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.65;
+    color: var(--texto-secundario);
+    max-width: 560px;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+    width: 100%;
+    padding-top: 4px;
+  }
+
+  .hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px 24px;
+    padding-top: 14px;
+    margin-top: 4px;
+    border-top: 1px solid var(--borda-suave);
+    width: 100%;
+    max-width: 560px;
+  }
+
+  .hero-meta-item {
     display: inline-flex;
     align-items: center;
-    gap: 10px;
-    border: 1px solid rgba(208, 173, 146, 0.5);
-    color: var(--dourado-light);
-    padding: 16px 32px;
-    font-family: 'Cinzel', serif;
-    font-size: 11px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    text-decoration: none;
+    gap: 8px;
+    font-size: 14px;
     font-weight: 500;
-    transition: all 0.25s;
-    background: transparent;
+    color: var(--texto-secundario);
   }
 
-  .btn-secondary:hover {
-    border-color: var(--dourado);
-    color: var(--dourado);
+  .hero-meta-item svg {
+    width: 16px;
+    height: 16px;
+    color: var(--cobre-escuro);
+    flex-shrink: 0;
   }
 
-  .hero-visual {
+  /* Frame da foto Hero */
+  .hero-media {
     position: relative;
-    overflow: hidden;
   }
 
-  .hero-img-overlay {
+  .hero-frame {
+    position: relative;
+    background: linear-gradient(180deg, var(--creme) 0%, var(--areia) 100%);
+    border: 1px solid var(--borda-media);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--sombra-card);
+  }
+
+  .hero-frame::before {
+    content: "";
     position: absolute;
-    inset: 0;
-    background:
-      linear-gradient(to right, var(--marsala-dark) 0%, rgba(46, 16, 13, 0.3) 40%, transparent 70%),
-      linear-gradient(to top, var(--marsala-dark) 0%, transparent 30%);
+    inset: 12px 12px 0 12px;
+    border: 1px solid var(--borda-suave);
+    border-bottom: 0;
+    pointer-events: none;
     z-index: 1;
   }
 
-  .hero-bg-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.4;
-    filter: grayscale(30%) contrast(1.1);
-  }
-
-  .hero-ornament {
-    position: absolute;
-    bottom: 60px;
-    right: 60px;
+  .hero-frame picture {
+    display: block;
+    line-height: 0;
+    position: relative;
     z-index: 2;
-    opacity: 0.15;
+    padding-top: 16px;
   }
 
-  .hero-ornament svg {
-    width: 120px;
-    height: 120px;
-  }
-
-  .hero-stats {
-    position: absolute;
-    bottom: 60px;
-    left: 7%;
-    z-index: 2;
+  .hero-caption {
     display: flex;
-    gap: 48px;
-    opacity: 0;
-    animation: fadeUp 0.8s 1s forwards;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 20px;
+    background-color: var(--creme);
+    border-top: 2px solid var(--cobre);
+    position: relative;
+    z-index: 3;
   }
 
-  .stat-item {
+  .hero-caption-name {
+    font-family: var(--font-serif);
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--vinho);
+    line-height: 1.15;
+  }
+
+  .hero-caption-sub {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--cobre-escuro);
+    white-space: nowrap;
+  }
+
+  /* Grid de Situações */
+  .situations-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+
+  .situation-card {
+    background-color: var(--creme);
+    border: 1px solid var(--borda-suave);
+    border-top: 3px solid var(--cobre);
+    border-radius: var(--radius);
+    padding: 28px;
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    justify-content: space-between;
+    gap: 18px;
+    box-shadow: var(--sombra-sutil);
+    transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
   }
 
-  .stat-num {
-    font-family: 'Cinzel', serif;
-    font-size: 28px;
-    color: var(--dourado);
-    font-weight: 400;
+  .situation-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--sombra-card);
+    border-color: var(--cobre);
   }
 
-  .stat-label {
-    font-size: 10px;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: rgba(254, 254, 254, 0.45);
-    font-weight: 500;
-  }
-
-  /* DIVIDER */
-  .section-divider {
-    height: 1px;
-    background: linear-gradient(to right, transparent, var(--dourado), transparent);
-    opacity: 0.35;
-    margin: 0 5%;
-  }
-
-  /* PROBLEMA */
-  .problema {
-    background: var(--creme);
-    padding: 100px 7%;
-  }
-
-  .problema-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: center;
-  }
-
-  .section-label {
+  .situation-tag {
     display: inline-flex;
     align-items: center;
-    gap: 10px;
-    margin-bottom: 24px;
-  }
-
-  .section-label::before {
-    content: '';
-    display: block;
-    width: 24px;
-    height: 1px;
-    background: var(--dourado);
-  }
-
-  .section-label span {
-    font-size: 10px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--dourado);
-    font-weight: 600;
-  }
-
-  .problema h2 {
-    font-size: clamp(24px, 3vw, 38px);
-    font-weight: 400;
-    color: var(--marsala);
-    line-height: 1.35;
-    margin-bottom: 24px;
-  }
-
-  .problema p {
-    font-size: 15px;
-    line-height: 1.85;
-    color: var(--texto-muted);
-    font-weight: 300;
-  }
-
-  .dores-list {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .dor-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 18px;
-    padding: 24px;
-    background: var(--branco);
-    border-left: 2px solid var(--dourado);
-  }
-
-  .dor-icon {
-    width: 36px;
-    height: 36px;
-    min-width: 36px;
-    background: var(--dourado-pale);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .dor-icon svg {
-    width: 18px;
-    height: 18px;
-    stroke: var(--marsala);
-    fill: none;
-    stroke-width: 1.5;
-  }
-
-  .dor-text strong {
-    display: block;
-    font-family: 'Cinzel', serif;
-    font-size: 12px;
-    letter-spacing: 0.5px;
-    color: var(--marsala);
-    margin-bottom: 6px;
-  }
-
-  .dor-text p {
-    font-size: 13px;
-    line-height: 1.65;
-    color: var(--texto-muted);
-    font-weight: 400;
-  }
-
-  /* SERVIÇOS */
-  .servicos {
-    background: var(--branco);
-    padding: 100px 7%;
-  }
-
-  .servicos-header {
-    text-align: center;
-    max-width: 560px;
-    margin: 0 auto 64px;
-  }
-
-  .servicos-header h2 {
-    font-size: clamp(26px, 3vw, 40px);
-    color: var(--marsala);
-    font-weight: 400;
-    margin-bottom: 16px;
-    line-height: 1.3;
-  }
-
-  .servicos-header p {
-    font-size: 14px;
-    line-height: 1.8;
-    color: var(--texto-muted);
-    font-weight: 300;
-  }
-
-  .servicos-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2px;
-    background: rgba(208, 173, 146, 0.15);
-  }
-
-  .servico-card {
-    background: var(--branco);
-    padding: 44px 36px;
-    position: relative;
-    overflow: hidden;
-    transition: all 0.35s;
-    cursor: default;
-  }
-
-  .servico-card::after {
-    content: '';
-    position: absolute;
-    bottom: 0; left: 0;
-    width: 0; height: 2px;
-    background: var(--dourado);
-    transition: width 0.35s;
-  }
-
-  .servico-card:hover {
-    background: var(--marsala-dark);
-  }
-
-  .servico-card:hover::after { width: 100%; }
-
-  .servico-card:hover .servico-num,
-  .servico-card:hover h3,
-  .servico-card:hover p {
-    color: rgba(254, 254, 254, 0.9);
-  }
-
-  .servico-card:hover .servico-icon {
-    border-color: rgba(208, 173, 146, 0.3);
-  }
-
-  .servico-card:hover .servico-icon svg {
-    stroke: var(--dourado);
-  }
-
-  .servico-num {
-    font-family: 'Cinzel', serif;
-    font-size: 11px;
-    letter-spacing: 2px;
-    color: var(--dourado);
-    margin-bottom: 20px;
-    font-weight: 400;
-    transition: color 0.35s;
-  }
-
-  .servico-icon {
-    width: 48px;
-    height: 48px;
-    border: 1px solid rgba(208, 173, 146, 0.4);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
-    transition: border-color 0.35s;
-  }
-
-  .servico-icon svg {
-    width: 22px;
-    height: 22px;
-    stroke: var(--marsala);
-    fill: none;
-    stroke-width: 1.3;
-    transition: stroke 0.35s;
-  }
-
-  .servico-card h3 {
-    font-size: 14px;
-    letter-spacing: 1px;
-    color: var(--marsala);
-    margin-bottom: 12px;
-    font-weight: 600;
-    transition: color 0.35s;
-  }
-
-  .servico-card p {
-    font-size: 13px;
-    line-height: 1.75;
-    color: var(--texto-muted);
-    font-weight: 300;
-    transition: color 0.35s;
-  }
-
-  /* PROVA SOCIAL */
-  .prova-social {
-    background: var(--marsala);
-    padding: 100px 7%;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .prova-social::before {
-    content: '❝';
-    position: absolute;
-    top: -20px;
-    left: 5%;
-    font-size: 220px;
-    color: rgba(208, 173, 146, 0.07);
-    font-family: Georgia, serif;
-    line-height: 1;
-    pointer-events: none;
-  }
-
-  .prova-header {
-    text-align: center;
-    margin-bottom: 64px;
-  }
-
-  .prova-header h2 {
-    font-size: clamp(24px, 3vw, 36px);
-    color: var(--dourado-light);
-    font-weight: 400;
-    margin-bottom: 8px;
-  }
-
-  .prova-header p {
-    font-size: 13px;
-    color: rgba(254, 254, 254, 0.45);
-    letter-spacing: 1px;
-  }
-
-  .depoimentos-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    margin-bottom: 64px;
-  }
-
-  .depoimento {
-    background: rgba(254, 254, 254, 0.05);
-    border: 1px solid rgba(208, 173, 146, 0.2);
-    padding: 36px 32px;
-    position: relative;
-  }
-
-  .depoimento::before {
-    content: '❝';
-    font-size: 28px;
-    color: var(--dourado);
-    opacity: 0.6;
-    font-family: Georgia, serif;
-    display: block;
-    margin-bottom: 16px;
-  }
-
-  .depoimento p {
-    font-size: 14px;
-    line-height: 1.8;
-    color: rgba(254, 254, 254, 0.75);
-    font-weight: 300;
-    margin-bottom: 28px;
-    font-style: italic;
-  }
-
-  .dep-autor {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .dep-avatar {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: rgba(208, 173, 146, 0.2);
-    border: 1px solid rgba(208, 173, 146, 0.35);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Cinzel', serif;
-    font-size: 13px;
-    color: var(--dourado);
-  }
-
-  .dep-info strong {
-    display: block;
-    font-family: 'Cinzel', serif;
-    font-size: 11px;
-    color: var(--dourado-light);
-    letter-spacing: 0.5px;
-    margin-bottom: 2px;
-  }
-
-  .dep-info span {
-    font-size: 11px;
-    color: rgba(254, 254, 254, 0.4);
-    letter-spacing: 0.5px;
-  }
-
-  .numeros-row {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1px;
-    background: rgba(208, 173, 146, 0.15);
-  }
-
-  .numero-item {
-    background: rgba(254, 254, 254, 0.04);
-    padding: 36px 24px;
-    text-align: center;
-  }
-
-  .numero-val {
-    font-family: 'Cinzel', serif;
-    font-size: 42px;
-    color: var(--dourado);
-    font-weight: 400;
-    display: block;
-    line-height: 1;
-    margin-bottom: 8px;
-  }
-
-  .numero-desc {
-    font-size: 11px;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: rgba(254, 254, 254, 0.4);
-    font-weight: 500;
-  }
-
-  /* SOBRE */
-  .sobre {
-    background: var(--creme);
-    padding: 100px 7%;
-  }
-
-  .sobre-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 80px;
-    align-items: center;
-  }
-
-  .sobre-foto-wrap {
-    position: relative;
-  }
-
-  .sobre-foto-placeholder {
-    width: 100%;
-    aspect-ratio: 3/4;
-    background: linear-gradient(135deg, #2e100d 0%, #4a1a16 60%, #6b2720 100%);
-    position: relative;
-    overflow: hidden;
-  }
-
-  .sobre-foto-placeholder::after {
-    content: '';
-    position: absolute;
-    bottom: 0; right: 0;
-    width: 60%;
-    height: 60%;
-    background: rgba(208, 173, 146, 0.07);
-    clip-path: polygon(100% 0, 100% 100%, 0 100%);
-  }
-
-  .foto-initials {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     gap: 8px;
-  }
-
-  .foto-initials .monogram {
-    width: 100px;
-    height: 100px;
-    border: 1px solid rgba(208, 173, 146, 0.3);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Cinzel', serif;
-    font-size: 28px;
-    color: rgba(208, 173, 146, 0.6);
-  }
-
-  .foto-initials p {
-    font-size: 10px;
-    letter-spacing: 3px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: rgba(208, 173, 146, 0.35);
+    color: var(--cobre-escuro);
   }
 
-  .foto-destaque {
-    position: absolute;
-    bottom: -24px;
-    right: -24px;
-    background: var(--marsala);
-    padding: 28px 32px;
-    z-index: 2;
-  }
-
-  .foto-destaque strong {
-    display: block;
-    font-family: 'Cinzel', serif;
-    font-size: 22px;
-    color: var(--dourado);
-    line-height: 1;
-    margin-bottom: 4px;
-  }
-
-  .foto-destaque span {
-    font-size: 10px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: rgba(254, 254, 254, 0.5);
-  }
-
-  .sobre-content h2 {
-    font-size: clamp(26px, 3vw, 40px);
-    color: var(--marsala);
-    font-weight: 400;
-    line-height: 1.3;
-    margin-bottom: 8px;
-  }
-
-  .sobre-nome-sub {
-    font-size: 11px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--dourado);
+  .situation-quote {
+    font-family: var(--font-serif);
     font-weight: 600;
-    margin-bottom: 32px;
+    font-size: 26px;
+    line-height: 1.18;
+    color: var(--vinho);
+    margin: 10px 0 10px;
   }
 
-  .sobre-text {
+  .situation-desc {
+    margin: 0;
+    font-size: 15.5px;
+    line-height: 1.65;
+    color: var(--texto-secundario);
+  }
+
+  .situation-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    align-self: flex-start;
+    padding-top: 12px;
+    border-top: 1px solid var(--borda-suave);
+    width: 100%;
     font-size: 14px;
-    line-height: 1.9;
-    color: var(--texto-muted);
-    font-weight: 300;
-    margin-bottom: 20px;
+    font-weight: 700;
+    color: var(--vinho);
+    text-decoration: none;
+    transition: color var(--transition), gap var(--transition);
   }
 
-  .sobre-credentials {
-    display: flex;
-    flex-direction: column;
+  .situation-link:hover {
+    color: var(--cobre-escuro);
     gap: 12px;
-    margin-top: 36px;
-    padding-top: 36px;
-    border-top: 1px solid rgba(208, 173, 146, 0.3);
   }
 
-  .cred-item {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-  }
-
-  .cred-dot {
-    width: 6px;
-    height: 6px;
-    background: var(--dourado);
-    flex-shrink: 0;
-  }
-
-  .cred-item span {
-    font-size: 13px;
-    color: var(--texto-muted);
-    font-weight: 400;
-  }
-
-  /* DIFERENCIAIS */
-  .diferenciais {
-    background: var(--branco);
-    padding: 100px 7%;
-  }
-
-  .diferenciais-header {
-    text-align: center;
-    max-width: 520px;
-    margin: 0 auto 64px;
-  }
-
-  .diferenciais-header h2 {
-    font-size: clamp(24px, 3vw, 38px);
-    color: var(--marsala);
-    font-weight: 400;
-    margin-bottom: 12px;
-  }
-
-  .diferenciais-header p {
-    font-size: 14px;
-    color: var(--texto-muted);
-    line-height: 1.75;
-    font-weight: 300;
-  }
-
-  .diferenciais-grid {
+  /* Como a Análise Funciona */
+  .steps-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 32px;
-  }
-
-  .diferencial-item {
-    display: flex;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 24px;
-    align-items: flex-start;
-    padding: 32px;
-    border: 1px solid rgba(208, 173, 146, 0.2);
-    transition: border-color 0.3s;
-  }
-
-  .diferencial-item:hover {
-    border-color: rgba(208, 173, 146, 0.6);
-  }
-
-  .diferencial-num {
-    font-family: 'Cinzel', serif;
-    font-size: 36px;
-    color: rgba(208, 173, 146, 0.25);
-    line-height: 1;
-    flex-shrink: 0;
-    font-weight: 400;
-  }
-
-  .diferencial-text h3 {
-    font-size: 13px;
-    letter-spacing: 1px;
-    color: var(--marsala);
-    margin-bottom: 10px;
-    font-weight: 600;
-  }
-
-  .diferencial-text p {
-    font-size: 13px;
-    line-height: 1.75;
-    color: var(--texto-muted);
-    font-weight: 300;
-  }
-
-  /* FORMULÁRIO / CTA */
-  .cta-section {
-    background: var(--marsala-dark);
-    padding: 100px 7%;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .cta-section::before {
-    content: '';
-    position: absolute;
-    top: -100px; right: -100px;
-    width: 500px; height: 500px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(208, 173, 146, 0.06) 0%, transparent 70%);
-    pointer-events: none;
-  }
-
-  .cta-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: start;
-  }
-
-  .cta-content h2 {
-    font-size: clamp(28px, 3.5vw, 46px);
-    color: var(--branco);
-    font-weight: 400;
-    line-height: 1.25;
-    margin-bottom: 20px;
-  }
-
-  .cta-content h2 em {
-    font-style: normal;
-    color: var(--dourado);
-  }
-
-  .cta-content p {
-    font-size: 14px;
-    line-height: 1.85;
-    color: rgba(254, 254, 254, 0.55);
-    font-weight: 300;
     margin-bottom: 40px;
   }
 
-  .cta-wpp {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    background: #25D366;
-    color: #fff;
-    padding: 18px 36px;
-    font-family: 'Cinzel', serif;
-    font-size: 12px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.25s;
-    margin-bottom: 16px;
+  .step-card {
+    background-color: var(--creme);
+    border: 1px solid var(--borda-suave);
+    border-radius: var(--radius);
+    padding: 26px 22px;
     display: flex;
-    width: fit-content;
+    flex-direction: column;
+    gap: 12px;
+    position: relative;
+    transition: border-color var(--transition), box-shadow var(--transition);
   }
 
-  .cta-wpp:hover {
-    background: #1abe58;
-    transform: translateY(-1px);
+  .step-card:hover {
+    border-color: var(--cobre);
+    box-shadow: var(--sombra-sutil);
   }
 
-  .cta-wpp svg {
-    width: 20px;
-    height: 20px;
-    fill: white;
-    flex-shrink: 0;
-  }
-
-  .cta-alt {
-    font-size: 12px;
-    color: rgba(254, 254, 254, 0.35);
-    letter-spacing: 1px;
-  }
-
-  /* FORM */
-  .cta-form {
-    background: rgba(254, 254, 254, 0.04);
-    border: 1px solid rgba(208, 173, 146, 0.2);
-    padding: 44px 40px;
-  }
-
-  .form-title {
-    font-family: 'Cinzel', serif;
-    font-size: 12px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--dourado);
-    margin-bottom: 32px;
-    font-weight: 400;
-  }
-
-  .form-group {
-    margin-bottom: 20px;
-  }
-
-  .form-group label {
-    display: block;
-    font-size: 10px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: rgba(254, 254, 254, 0.4);
-    margin-bottom: 8px;
-    font-weight: 500;
-  }
-
-  .form-group input,
-  .form-group select,
-  .form-group textarea {
-    width: 100%;
-    background: rgba(254, 254, 254, 0.06);
-    border: 1px solid rgba(208, 173, 146, 0.2);
-    border-radius: 0;
-    padding: 14px 16px;
-    font-family: 'Raleway', sans-serif;
-    font-size: 13px;
-    color: rgba(254, 254, 254, 0.85);
-    outline: none;
-    transition: border-color 0.2s;
-    font-weight: 300;
-  }
-
-  .form-group input:focus,
-  .form-group select:focus,
-  .form-group textarea:focus {
-    border-color: rgba(208, 173, 146, 0.5);
-  }
-
-  .form-group select option {
-    background: var(--marsala-dark);
-    color: #fff;
-  }
-
-  .form-group textarea {
-    height: 100px;
-    resize: none;
-  }
-
-  .form-submit {
-    width: 100%;
-    background: var(--dourado);
-    color: var(--marsala-dark);
-    border: none;
-    padding: 18px;
-    font-family: 'Cinzel', serif;
-    font-size: 11px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    font-weight: 700;
-    cursor: pointer;
-    transition: all 0.25s;
-    margin-top: 8px;
-  }
-
-  .form-submit:hover {
-    background: var(--dourado-light);
-    transform: translateY(-1px);
-  }
-
-  .form-disclaimer {
-    font-size: 11px;
-    color: rgba(254, 254, 254, 0.25);
-    margin-top: 16px;
-    text-align: center;
-    line-height: 1.5;
-  }
-
-  /* FOOTER */
-  footer {
-    background: var(--marsala-dark);
-    border-top: 1px solid rgba(208, 173, 146, 0.1);
-    padding: 48px 7%;
+  .step-top {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 24px;
-    flex-wrap: wrap;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--borda-suave);
   }
 
-  .footer-logo {
-    font-family: 'Cinzel', serif;
+  .step-num {
+    font-family: var(--font-serif);
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--cobre-escuro);
+  }
+
+  .step-label {
     font-size: 11px;
-    letter-spacing: 2px;
-    color: var(--dourado);
+    font-weight: 700;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
+    color: var(--cobre-escuro);
   }
 
-  .footer-logo span {
-    display: block;
-    font-size: 9px;
-    letter-spacing: 3px;
-    color: rgba(208, 173, 146, 0.4);
-    margin-top: 3px;
-    font-family: 'Raleway', sans-serif;
+  .step-title {
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.35;
+    color: var(--vinho);
+    margin: 0;
   }
 
-  footer p {
-    font-size: 11px;
-    color: rgba(254, 254, 254, 0.25);
-    text-align: center;
+  .step-text {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--texto-secundario);
   }
 
-  .footer-oab {
-    font-size: 11px;
-    color: rgba(208, 173, 146, 0.45);
-    text-align: right;
+  /* Painel Primeiro Contato */
+  .contact-panel {
+    background-color: var(--vinho);
+    color: var(--marfim);
+    border: 1px solid var(--cobre);
+    border-radius: var(--radius);
+    padding: 36px 40px;
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) auto;
+    gap: 32px;
+    align-items: center;
+    box-shadow: var(--sombra-card);
   }
 
-  /* ANIMATIONS */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+  .contact-panel-title {
+    font-family: var(--font-serif);
+    font-size: clamp(26px, 2.8vw, 32px);
+    font-weight: 600;
+    line-height: 1.15;
+    color: var(--marfim);
+    margin: 0 0 10px;
   }
 
-  .reveal {
-    opacity: 0;
-    transform: translateY(24px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
+  .contact-panel-text {
+    margin: 0 0 16px;
+    font-size: 16px;
+    line-height: 1.65;
+    color: var(--areia);
+    max-width: 660px;
   }
 
-  .reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
+  .contact-panel-points {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 22px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--marfim);
   }
 
-  /* FLOATING WHATSAPP */
-  .wpp-float {
-    position: fixed;
-    bottom: 32px;
-    right: 32px;
-    z-index: 999;
-    background: #25D366;
-    width: 60px;
-    height: 60px;
+  .contact-panel-points li {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .contact-panel-points li::before {
+    content: "";
+    width: 7px;
+    height: 7px;
     border-radius: 50%;
+    background-color: var(--cobre);
+    flex-shrink: 0;
+  }
+
+  .contact-panel-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+  }
+
+  .contact-panel-phone {
+    font-size: 13px;
+    color: var(--areia);
+  }
+
+  /* Seção Sobre */
+  .about-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: 48px;
+    align-items: center;
+  }
+
+  .about-media {
+    position: relative;
+  }
+
+  .about-frame {
+    position: relative;
+    border: 1px solid var(--cobre);
+    border-radius: var(--radius);
+    background-color: var(--creme);
+    padding: 10px;
+    box-shadow: var(--sombra-card);
+  }
+
+  .about-frame img {
+    border-radius: 2px;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .about-text {
+    margin: 0;
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--tinta);
+  }
+
+  .credentials-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    margin-top: 8px;
+    padding-top: 20px;
+    border-top: 1px solid var(--borda-suave);
+  }
+
+  .credential-item {
+    background-color: var(--creme);
+    border: 1px solid var(--borda-suave);
+    border-left: 3px solid var(--cobre);
+    border-radius: var(--radius);
+    padding: 14px 16px;
+  }
+
+  .credential-label {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--cobre-escuro);
+    margin-bottom: 4px;
+  }
+
+  .credential-value {
+    display: block;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--vinho);
+  }
+
+  /* Outras Áreas */
+  .areas-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+  }
+
+  .area-card {
+    background-color: var(--creme);
+    border: 1px solid var(--borda-suave);
+    border-top: 3px solid var(--vinho);
+    border-radius: var(--radius);
+    padding: 28px 24px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 18px;
+    box-shadow: var(--sombra-sutil);
+    transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+  }
+
+  .area-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--sombra-card);
+    border-color: var(--cobre);
+    border-top-color: var(--cobre);
+  }
+
+  .area-tag {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--cobre-escuro);
+    margin-bottom: 10px;
+  }
+
+  .area-title {
+    font-family: var(--font-serif);
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 1.15;
+    color: var(--vinho);
+    margin: 0 0 10px;
+  }
+
+  .area-desc {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--texto-secundario);
+  }
+
+  .area-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 14px;
+    border-top: 1px solid var(--borda-suave);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--vinho);
+    transition: color var(--transition);
+  }
+
+  .area-card:hover .area-cta {
+    color: var(--cobre-escuro);
+  }
+
+  .area-cta-arrow {
+    transition: transform var(--transition);
+  }
+
+  .area-card:hover .area-cta-arrow {
+    transform: translateX(4px);
+  }
+
+  /* Perguntas Frequentes (Accordion sem JS) */
+  .faq-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    gap: 48px;
+    align-items: start;
+  }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .faq-item {
+    background-color: var(--creme);
+    border: 1px solid var(--borda-suave);
+    border-radius: var(--radius);
+    transition: border-color var(--transition), box-shadow var(--transition);
+  }
+
+  .faq-item[open] {
+    border-color: var(--cobre);
+    box-shadow: var(--sombra-sutil);
+  }
+
+  .faq-summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 20px 22px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.35);
-    transition: all 0.25s;
-    animation: pulse 2.5s infinite;
+    justify-content: space-between;
+    gap: 16px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--vinho);
   }
 
-  .wpp-float:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 28px rgba(37, 211, 102, 0.5);
+  .faq-summary::-webkit-details-marker {
+    display: none;
   }
 
-  .wpp-float svg {
+  .faq-toggle {
     width: 28px;
     height: 28px;
-    fill: white;
+    border: 1px solid var(--borda-media);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    position: relative;
+    transition: background-color var(--transition), border-color var(--transition);
   }
 
-  @keyframes pulse {
-    0%, 100% { box-shadow: 0 4px 20px rgba(37, 211, 102, 0.35); }
-    50% { box-shadow: 0 4px 32px rgba(37, 211, 102, 0.6); }
+  .faq-toggle::before,
+  .faq-toggle::after {
+    content: "";
+    position: absolute;
+    width: 11px;
+    height: 1.5px;
+    background-color: var(--vinho);
+    transition: transform var(--transition), opacity var(--transition);
   }
 
-  /* RESPONSIVE */
-  @media (max-width: 900px) {
-    .hero { grid-template-columns: 1fr; min-height: auto; }
-    .hero-visual { display: none; }
-    .hero-content { padding: 120px 6% 80px; }
-    .hero-stats { position: static; margin-top: 48px; }
-    .problema-grid, .sobre-grid, .cta-grid { grid-template-columns: 1fr; gap: 48px; }
-    .servicos-grid { grid-template-columns: 1fr; }
-    .depoimentos-grid { grid-template-columns: 1fr; }
-    .numeros-row { grid-template-columns: repeat(2, 1fr); }
-    .diferenciais-grid { grid-template-columns: 1fr; }
-    nav { padding: 0 5%; }
-    .nav-links { display: none; }
-    .foto-destaque { right: 0; bottom: -12px; }
+  .faq-toggle::after {
+    transform: rotate(90deg);
   }
 
-  @media (max-width: 600px) {
-    .numeros-row { grid-template-columns: 1fr 1fr; }
-    .hero-stats { gap: 28px; }
+  .faq-item[open] .faq-toggle {
+    background-color: var(--vinho);
+    border-color: var(--vinho);
+  }
+
+  .faq-item[open] .faq-toggle::before,
+  .faq-item[open] .faq-toggle::after {
+    background-color: var(--marfim);
+  }
+
+  .faq-item[open] .faq-toggle::after {
+    transform: rotate(0deg);
+    opacity: 0;
+  }
+
+  .faq-answer {
+    padding: 0 22px 22px;
+    font-size: 15.5px;
+    line-height: 1.65;
+    color: var(--texto-secundario);
+  }
+
+  .faq-answer p {
+    margin: 0;
+  }
+
+  /* CTA Final + Retrato Editorial */
+  .final-cta-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+    gap: 52px;
+    align-items: center;
+  }
+
+  .final-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+  }
+
+  .final-cta .h2 {
+    color: var(--marfim);
+  }
+
+  .final-cta-text {
+    margin: 0;
+    font-size: 17px;
+    line-height: 1.65;
+    color: var(--areia);
+    max-width: 560px;
+  }
+
+  .final-cta-note {
+    font-size: 14px;
+    color: var(--areia);
+    opacity: 0.92;
+  }
+
+  .portrait-showcase {
+    position: relative;
+    width: 100%;
+    max-width: 356px;
+    justify-self: center;
+  }
+
+  /* Moldura arquitetônica deslocada em cobre com efeito parallax no hover */
+  .portrait-showcase::before {
+    content: "";
+    position: absolute;
+    inset: 14px -14px -14px 14px;
+    border: 1px solid rgba(185, 122, 74, 0.65);
+    border-radius: 190px 190px 8px 8px;
+    pointer-events: none;
+    transition: transform 420ms cubic-bezier(0.22, 1, 0.36, 1), border-color 420ms ease;
+  }
+
+  .portrait-showcase:hover::before {
+    transform: translate(-6px, -6px);
+    border-color: var(--cobre);
+  }
+
+  .portrait-arch {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 4 / 5;
+    border-radius: 190px 190px 6px 6px;
+    border: 1.5px solid var(--cobre);
+    background-color: var(--tinta);
+    box-shadow: 0 22px 48px rgba(20, 6, 4, 0.45);
+  }
+
+  .portrait-arch img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 14%;
+    filter: contrast(1.03) saturate(0.94);
+    transform: scale(1);
+    transition: transform 650ms cubic-bezier(0.22, 1, 0.36, 1), filter 500ms ease;
+  }
+
+  .portrait-showcase:hover .portrait-arch img {
+    transform: scale(1.05);
+    filter: contrast(1.06) saturate(1.05);
+  }
+
+  /* Vinheta quente inferior + brilho diagonal sutil ao passar o cursor */
+  .portrait-arch::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(180deg, rgba(42, 18, 16, 0) 48%, rgba(42, 18, 16, 0.82) 100%);
+    pointer-events: none;
+  }
+
+  .portrait-arch::after {
+    content: "";
+    position: absolute;
+    top: -30%;
+    left: -130%;
+    width: 75%;
+    height: 160%;
+    z-index: 2;
+    background: linear-gradient(
+      115deg,
+      rgba(247, 242, 232, 0) 0%,
+      rgba(247, 242, 232, 0.16) 50%,
+      rgba(247, 242, 232, 0) 100%
+    );
+    transform: skewX(-18deg);
+    pointer-events: none;
+    transition: left 750ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .portrait-showcase:hover .portrait-arch::after {
+    left: 145%;
+  }
+
+  .portrait-badge {
+    position: absolute;
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+    z-index: 3;
+    padding: 12px 16px;
+    background-color: rgba(42, 18, 16, 0.78);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(185, 122, 74, 0.55);
+    border-radius: var(--radius);
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    transition: border-color var(--transition), transform var(--transition);
+  }
+
+  .portrait-showcase:hover .portrait-badge {
+    border-color: var(--cobre);
+    transform: translateY(-2px);
+  }
+
+  .portrait-badge-name {
+    font-family: var(--font-serif);
+    font-size: 19px;
+    font-weight: 600;
+    line-height: 1.15;
+    color: var(--marfim);
+  }
+
+  .portrait-badge-meta {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: var(--areia);
+  }
+
+  /* Rodapé com transição suave */
+  .site-footer {
+    background: linear-gradient(180deg, var(--creme) 0%, var(--marfim) 100%);
+    padding-top: 32px;
+    padding-bottom: 40px;
+    overflow-x: clip;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+    gap: 32px;
+    padding-bottom: 22px;
+  }
+
+  .footer-brand {
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--vinho);
+    margin-bottom: 6px;
+  }
+
+  .footer-info {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--texto-secundario);
+  }
+
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+    font-size: 14px;
+  }
+
+  .footer-links a {
+    color: var(--vinho);
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color var(--transition), color var(--transition);
+  }
+
+  .footer-links a:hover {
+    color: var(--cobre-escuro);
+    border-bottom-color: var(--cobre);
+  }
+
+  .footer-disclaimer {
+    padding-top: 12px;
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--texto-secundario);
+  }
+
+  /* Botão flutuante de WhatsApp */
+  @keyframes wa-pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(185, 122, 74, 0.55);
+    }
+    70% {
+      box-shadow: 0 0 0 14px rgba(185, 122, 74, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(185, 122, 74, 0);
+    }
+  }
+
+  .whatsapp-float {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 60;
+    display: inline-flex;
+    align-items: center;
+    gap: 11px;
+    padding: 9px 18px 9px 10px;
+    border-radius: 999px;
+    background-color: var(--vinho);
+    color: var(--marfim);
+    border: 1.5px solid var(--cobre);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    box-shadow: 0 14px 32px rgba(42, 18, 16, 0.28);
+    transition: transform var(--transition), background-color var(--transition), box-shadow var(--transition), border-color var(--transition);
+  }
+
+  .whatsapp-float:hover {
+    background-color: var(--vinho-hover);
+    border-color: var(--marfim);
+    transform: translateY(-3px);
+    box-shadow: 0 18px 38px rgba(42, 18, 16, 0.36);
+  }
+
+  .whatsapp-float-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background-color: var(--marfim);
+    color: var(--vinho);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    animation: wa-pulse 2.8s infinite;
+    transition: transform var(--transition);
+  }
+
+  .whatsapp-float:hover .whatsapp-float-icon {
+    transform: scale(1.06);
+  }
+
+  .whatsapp-float-icon svg {
+    width: 21px;
+    height: 21px;
+  }
+
+  .whatsapp-float-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+  }
+
+  .whatsapp-float-label {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: var(--marfim);
+  }
+
+  .whatsapp-float-sub {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--areia);
+  }
+
+  /* Responsividade */
+  @media (max-width: 1240px) {
+    .page-spine {
+      left: 6px;
+      width: 22px;
+    }
+
+    .wrap {
+      padding-left: 38px;
+    }
+  }
+
+  @media (max-width: 980px) {
+    .header-nav {
+      display: none;
+    }
+
+    .mobile-subnav {
+      display: flex;
+      gap: 18px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      padding: 6px 32px 12px;
+      background-color: transparent;
+    }
+
+    .mobile-subnav::-webkit-scrollbar {
+      display: none;
+    }
+
+    .mobile-subnav a {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--texto-secundario);
+      text-decoration: none;
+      white-space: nowrap;
+      flex-shrink: 0;
+      padding: 4px 0;
+    }
+
+    .mobile-subnav a:hover {
+      color: var(--vinho);
+    }
+
+    .hero-grid,
+    .about-grid,
+    .faq-layout,
+    .contact-panel,
+    .final-cta-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .hero-grid {
+      gap: 36px;
+    }
+
+    .hero-media {
+      max-width: 520px;
+      width: 100%;
+    }
+
+    .steps-track-wrap {
+      display: none;
+    }
+
+    .steps-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .areas-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .contact-panel {
+      padding: 28px 26px;
+    }
+
+    .contact-panel-cta {
+      align-items: flex-start;
+    }
+
+    .final-cta-grid {
+      gap: 40px;
+    }
+
+    .portrait-showcase {
+      max-width: 320px;
+      margin: 0 auto;
+    }
+  }
+
+  @media (max-width: 680px) {
+    .page-spine {
+      left: 3px;
+      width: 14px;
+    }
+
+    .wrap {
+      padding-left: 24px;
+      padding-right: 18px;
+    }
+
+    .header-inner {
+      padding-top: 12px;
+      padding-bottom: 8px;
+    }
+
+    .brand {
+      gap: 10px;
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      font-size: 16px;
+    }
+
+    .brand-name {
+      font-size: 14px;
+    }
+
+    .brand-role {
+      font-size: 11.5px;
+    }
+
+    .mobile-subnav {
+      padding-left: 20px;
+      padding-right: 20px;
+      gap: 16px;
+    }
+
+    .section {
+      padding-top: 52px;
+      padding-bottom: 52px;
+    }
+
+    .section--areia {
+      background: linear-gradient(
+        180deg,
+        var(--marfim) 0%,
+        var(--areia) 56px,
+        var(--areia) calc(100% - 56px),
+        var(--marfim) 100%
+      );
+    }
+
+    .section--vinho {
+      padding-top: 72px;
+      padding-bottom: 72px;
+    }
+
+    .section--vinho::before,
+    .section--vinho::after {
+      height: 32px;
+    }
+
+    .section-head {
+      margin-bottom: 28px;
+    }
+
+    .section-lead {
+      font-size: 15.5px;
+    }
+
+    .hero {
+      padding-top: 28px;
+      padding-bottom: 44px;
+    }
+
+    .h1 {
+      font-size: clamp(29px, 7.8vw, 38px);
+    }
+
+    .h2 {
+      font-size: clamp(26px, 6.8vw, 32px);
+    }
+
+    .hero-badge {
+      font-size: 12px;
+      padding: 6px 12px;
+    }
+
+    .hero-subtitle {
+      font-size: 16px;
+    }
+
+    .hero-caption {
+      flex-wrap: wrap;
+      gap: 4px 12px;
+      padding: 12px 16px;
+    }
+
+    .hero-caption-name {
+      font-size: 18px;
+    }
+
+    .hero-caption-sub {
+      font-size: 12px;
+    }
+
+    .header-cta {
+      display: none;
+    }
+
+    .hero-actions .btn {
+      width: 100%;
+    }
+
+    .situations-grid,
+    .steps-grid,
+    .credentials-grid,
+    .footer-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .situation-card,
+    .step-card,
+    .area-card {
+      padding: 22px 18px;
+    }
+
+    .situation-quote {
+      font-size: 23px;
+    }
+
+    .contact-panel {
+      padding: 24px 18px;
+      gap: 22px;
+    }
+
+    .contact-panel-cta,
+    .contact-panel-cta .btn,
+    .final-cta .btn {
+      width: 100%;
+    }
+
+    .about-grid,
+    .faq-layout {
+      gap: 28px;
+    }
+
+    .faq-summary {
+      padding: 16px 18px;
+      font-size: 15px;
+    }
+
+    .faq-answer {
+      padding: 0 18px 18px;
+      font-size: 14.5px;
+    }
+
+    .portrait-showcase {
+      max-width: 280px;
+    }
+
+    .portrait-showcase::before {
+      inset: 10px -8px -10px 8px;
+    }
+
+    .footer-links {
+      align-items: flex-start;
+    }
+
+    .site-footer {
+      padding-top: 32px;
+      padding-bottom: 92px;
+    }
+
+    .whatsapp-float {
+      right: 16px;
+      bottom: calc(16px + env(safe-area-inset-bottom));
+      padding: 8px 15px 8px 8px;
+      gap: 9px;
+    }
+
+    .whatsapp-float-icon {
+      width: 34px;
+      height: 34px;
+    }
+
+    .whatsapp-float-sub {
+      display: none;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    .has-reveal [data-reveal] {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+    .eyebrow::before {
+      transform: scaleX(1) !important;
+    }
+    [data-scroll-draw] *,
+    .spine-active {
+      stroke-dashoffset: 0 !important;
+    }
+    .trace-shimmer,
+    .spine-cursor,
+    .spine-cursor-halo {
+      display: none !important;
+    }
+    *, *::before, *::after {
+      transition: none !important;
+      animation: none !important;
+    }
   }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav id="navbar">
-  <div class="nav-logo">
-    <div class="nav-monogram">CA</div>
-    <div class="nav-name">
-      <strong>Camila Ananias Pedron</strong>
-      <span>Advocacia</span>
-    </div>
-  </div>
-  <ul class="nav-links">
-    <li><a href="#servicos">Serviços</a></li>
-    <li><a href="#sobre">Sobre</a></li>
-    <li><a href="#depoimentos">Resultados</a></li>
-    <li><a href="#contato" class="nav-cta">Falar com a Dra.</a></li>
-  </ul>
-</nav>
+<a class="skip-link" href="#conteudo-principal">Pular para o conteúdo principal</a>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-content">
-    <div class="hero-tag">
-      <span>Advocacia Tributária</span>
-    </div>
-    <h1>
-      Menos impostos.<br>
-      <em>Mais segurança jurídica.</em>
-    </h1>
-    <p class="hero-sub">
-      Você paga mais tributos do que deveria? Muitas empresas perdem dinheiro todo mês por desconhecimento da lei. A Dra. Camila Ananias Pedron transforma complexidade tributária em oportunidade real para o seu negócio.
-    </p>
-    <div class="hero-ctas">
-      <a href="https://wa.me/5500000000000?text=Olá%20Dra.%20Camila,%20gostaria%20de%20uma%20consulta%20tributária." class="btn-primary" target="_blank">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-        Consulta Gratuita
-      </a>
-      <a href="#servicos" class="btn-secondary">Ver Serviços</a>
-    </div>
-    <div class="hero-stats">
-      <div class="stat-item">
-        <span class="stat-num">+500</span>
-        <span class="stat-label">Clientes atendidos</span>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="#topo" aria-label="Camila Ananias Pedron - Ir para o topo">
+      <div class="brand-mark" aria-hidden="true">CA</div>
+      <div class="brand-text">
+        <span class="brand-name">Camila Ananias Pedron</span>
+        <span class="brand-role">Advogada tributarista · OAB/SP 545.089</span>
       </div>
-      <div class="stat-item">
-        <span class="stat-num">8+</span>
-        <span class="stat-label">Anos de experiência</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-num">98%</span>
-        <span class="stat-label">Satisfação</span>
-      </div>
-    </div>
+    </a>
+
+    <nav class="header-nav" aria-label="Navegação principal">
+      <a href="#situacoes">Situações</a>
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#outras-areas">Outras áreas</a>
+      <a href="#duvidas">Dúvidas</a>
+    </nav>
+
+    <a class="btn btn--compact header-cta" href="https://wa.me/5514997485486?text=Ol%C3%A1%2C%20Dra.%20Camila.%20Gostaria%20de%20conversar%20sobre%20a%20situa%C3%A7%C3%A3o%20tribut%C3%A1ria%20da%20minha%20empresa." target="_blank" rel="noopener noreferrer">
+      <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+      <span>Falar sobre a dívida</span>
+    </a>
   </div>
-  <div class="hero-visual">
-    <div class="hero-img-overlay"></div>
-    <!-- Substitua pelo caminho da foto real -->
-    <div style="width:100%;height:100%;background:linear-gradient(160deg,#2e100d 0%,#4a1a16 50%,#6b2720 100%);display:flex;align-items:center;justify-content:center;">
-     <img src="camila.jpeg" alt="">
+
+  <nav class="mobile-subnav" aria-label="Navegação rápida">
+    <a href="#situacoes">Situações</a>
+    <a href="#como-funciona">Como funciona</a>
+    <a href="#sobre">Sobre</a>
+    <a href="#outras-areas">Outras áreas</a>
+    <a href="#duvidas">Dúvidas</a>
+  </nav>
+</header>
+
+<div class="page-spine" id="page-spine" aria-hidden="true">
+  <svg class="page-spine-svg" id="page-spine-svg" fill="none">
+    <path class="spine-ghost" id="spine-ghost" vector-effect="non-scaling-stroke" />
+    <path class="spine-active" id="spine-active" vector-effect="non-scaling-stroke" />
+    <g id="spine-nodes"></g>
+    <circle class="spine-cursor-halo" id="spine-cursor-halo" r="7" cx="12" cy="0" />
+    <circle class="spine-cursor" id="spine-cursor" r="3.2" cx="12" cy="0" />
+  </svg>
+</div>
+
+<main id="conteudo-principal">
+
+  <!-- Hero -->
+  <section id="topo" class="hero section--marfim">
+    <div class="wrap hero-grid">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="hero-badge-dot" aria-hidden="true"></span>
+          <span>Direito Tributário Empresarial · Atendimento online em todo o Brasil</span>
+        </div>
+
+        <h1 class="h1">Sua empresa tem dívidas tributárias e precisa decidir o que fazer primeiro?</h1>
+
+        <p class="hero-subtitle">Se você precisa de uma certidão para fechar contrato, recebeu uma cobrança fiscal ou tem parcelas pesando no caixa, eu começo por entender onde estão os débitos e quais caminhos podem ser avaliados no seu caso.</p>
+
+        <div class="hero-actions">
+          <a class="btn" href="https://wa.me/5514997485486?text=Ol%C3%A1%2C%20Dra.%20Camila.%20Gostaria%20de%20conversar%20sobre%20a%20situa%C3%A7%C3%A3o%20tribut%C3%A1ria%20da%20minha%20empresa." target="_blank" rel="noopener noreferrer">
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+            <span>Falar sobre a dívida da empresa</span>
+          </a>
+          <a class="btn btn--ghost" href="#como-funciona">Ver como a análise funciona</a>
+        </div>
+
+        <div class="hero-meta">
+          <span class="hero-meta-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            Primeiro contato pelo WhatsApp
+          </span>
+          <span class="hero-meta-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            Escopo e honorários apresentados antes da contratação
+          </span>
+        </div>
+      </div>
+
+      <div class="hero-media">
+        <div class="hero-frame">
+          <picture>
+            <source srcset="assets/hero.webp" type="image/webp">
+            <img src="assets/hero.png" width="925" height="750" fetchpriority="high" alt="Camila Ananias Pedron, advogada tributarista">
+          </picture>
+          <div class="hero-caption">
+            <span class="hero-caption-name">Camila Ananias Pedron</span>
+            <span class="hero-caption-sub">OAB/SP 545.089 · Ourinhos/SP</span>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="hero-ornament">
-      <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="60" cy="60" r="58" stroke="#d0ad92" stroke-width="0.5"/>
-        <circle cx="60" cy="60" r="48" stroke="#d0ad92" stroke-width="0.3"/>
-        <path d="M60 12 L60 108 M12 60 L108 60" stroke="#d0ad92" stroke-width="0.3"/>
-        <path d="M26 26 L94 94 M94 26 L26 94" stroke="#d0ad92" stroke-width="0.2"/>
+  </section>
+
+  <!-- Situações -->
+  <section id="situacoes" class="section section--areia">
+    <div class="wrap">
+      <div class="scroll-trace" data-scroll-draw aria-hidden="true" style="margin-bottom: 24px;">
+        <svg viewBox="0 0 1140 42" fill="none">
+          <path class="trace-line" vector-effect="non-scaling-stroke" d="M 0 12 L 260 12 C 310 12 335 32 385 32 L 1140 32"/>
+          <path class="trace-line trace-line--soft" vector-effect="non-scaling-stroke" d="M 0 20 L 230 20"/>
+          <path class="trace-line trace-node" vector-effect="non-scaling-stroke" d="M 314 22 L 322 14 L 330 22 L 322 30 Z"/>
+        </svg>
+      </div>
+      <div class="section-head" data-reveal>
+        <p class="eyebrow">Cenários frequentes</p>
+        <h2 class="h2">Qual dessas situações sua empresa está vivendo?</h2>
+        <p class="section-lead">São frases que costumo ouvir no primeiro contato. Cada cenário exige uma leitura técnica específica antes de escolher o próximo passo.</p>
+      </div>
+
+      <div class="situations-grid">
+        <article class="situation-card" data-reveal style="--reveal-delay: 40ms">
+          <div>
+            <span class="situation-tag">01 · Certidão e Contratos</span>
+            <h3 class="situation-quote">“Preciso da certidão para fechar um contrato.”</h3>
+            <p class="situation-desc">Verifico quais débitos impedem a emissão da certidão e avalio os caminhos para regularizar a situação, conforme o caso.</p>
+          </div>
+          <a class="situation-link" href="https://wa.me/5514997485486?text=Ol%C3%A1%2C%20Dra.%20Camila.%20Preciso%20de%20certid%C3%A3o%20para%20a%20minha%20empresa%20e%20gostaria%20de%20conversar%20sobre%20a%20situa%C3%A7%C3%A3o%20tribut%C3%A1ria." target="_blank" rel="noopener noreferrer">
+            <span>Conversar sobre emissão de certidão</span>
+            <span aria-hidden="true">→</span>
+          </a>
+        </article>
+
+        <article class="situation-card" data-reveal style="--reveal-delay: 120ms">
+          <div>
+            <span class="situation-tag">02 · Receita Federal e PGFN</span>
+            <h3 class="situation-quote">“Parte da dívida aparece na Receita e parte está na PGFN.”</h3>
+            <p class="situation-desc">Identifico em que fase cada débito está, na esfera administrativa ou já inscrito em dívida ativa, porque o caminho muda conforme o estágio da cobrança.</p>
+          </div>
+          <a class="situation-link" href="https://wa.me/5514997485486?text=Ol%C3%A1%2C%20Dra.%20Camila.%20A%20empresa%20tem%20d%C3%A9bitos%20na%20Receita%20e%20na%20PGFN%20e%20gostaria%20de%20conversar%20sobre%20o%20caso." target="_blank" rel="noopener noreferrer">
+            <span>Entender a fase dos débitos</span>
+            <span aria-hidden="true">→</span>
+          </a>
+        </article>
+
+        <article class="situation-card" data-reveal style="--reveal-delay: 80ms">
+          <div>
+            <span class="situation-tag">03 · Execução Fiscal</span>
+            <h3 class="situation-quote">“A empresa recebeu uma citação em execução fiscal.”</h3>
+            <p class="situation-desc">Analiso o processo, verifico os prazos aplicáveis e avalio as medidas cabíveis.</p>
+          </div>
+          <a class="situation-link" href="https://wa.me/5514997485486?text=Ol%C3%A1%2C%20Dra.%20Camila.%20A%20empresa%20recebeu%20uma%20cita%C3%A7%C3%A3o%20em%20execu%C3%A7%C3%A3o%20fiscal%20e%20gostaria%20de%20conversar%20sobre%20a%20situa%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer">
+            <span>Avaliar processo e prazos</span>
+            <span aria-hidden="true">→</span>
+          </a>
+        </article>
+
+        <article class="situation-card" data-reveal style="--reveal-delay: 160ms">
+          <div>
+            <span class="situation-tag">04 · Parcelamento e Caixa</span>
+            <h3 class="situation-quote">“O parcelamento atual está pesando no caixa.”</h3>
+            <p class="situation-desc">Reviso se as parcelas cabem no fluxo de caixa, avalio alternativas e explico os efeitos de uma eventual rescisão do parcelamento.</p>
+          </div>
+          <a class="situation-link" href="https://wa.me/5514997485486?text=Ol%C3%A1%2C%20Dra.%20Camila.%20O%20parcelamento%20atual%20est%C3%A1%20pesando%20no%20caixa%20e%20gostaria%20de%20conversar%20sobre%20alternativas." target="_blank" rel="noopener noreferrer">
+            <span>Revisar cenário do parcelamento</span>
+            <span aria-hidden="true">→</span>
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Como a análise funciona -->
+  <section id="como-funciona" class="section section--marfim">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <p class="eyebrow">Método de análise</p>
+        <h2 class="h2">Como a análise funciona</h2>
+        <p class="section-lead">Em vez de partir direto para um parcelamento padrão, o diagnóstico organiza os débitos por fase e avalia o impacto real de cada alternativa na empresa.</p>
+      </div>
+
+      <div class="steps-track-wrap scroll-trace" data-scroll-draw aria-hidden="true">
+        <svg viewBox="0 0 1140 28" fill="none">
+          <path class="trace-line" vector-effect="non-scaling-stroke" d="M 36 14 L 1104 14"/>
+          <circle class="trace-line" vector-effect="non-scaling-stroke" cx="132" cy="14" r="6"/>
+          <circle class="trace-line" vector-effect="non-scaling-stroke" cx="424" cy="14" r="6"/>
+          <circle class="trace-line" vector-effect="non-scaling-stroke" cx="716" cy="14" r="6"/>
+          <circle class="trace-line" vector-effect="non-scaling-stroke" cx="1008" cy="14" r="6"/>
+        </svg>
+      </div>
+
+      <div class="steps-grid">
+        <article class="step-card" data-reveal style="--reveal-delay: 0ms">
+          <div class="step-top">
+            <span class="step-num">01</span>
+            <span class="step-label">Mapeamento</span>
+          </div>
+          <h3 class="step-title">Localizar os débitos</h3>
+          <p class="step-text">Levanto os débitos por esfera (federal, estadual e municipal) e por estágio: cobrança administrativa, dívida ativa ou execução.</p>
+        </article>
+
+        <article class="step-card" data-reveal style="--reveal-delay: 80ms">
+          <div class="step-top">
+            <span class="step-num">02</span>
+            <span class="step-label">Comparação</span>
+          </div>
+          <h3 class="step-title">Avaliar as alternativas</h3>
+          <p class="step-text">Comparo transação tributária, parcelamento e defesa, conforme o caso. Nem toda dívida admite os três caminhos.</p>
+        </article>
+
+        <article class="step-card" data-reveal style="--reveal-delay: 160ms">
+          <div class="step-top">
+            <span class="step-num">03</span>
+            <span class="step-label">Viabilidade</span>
+          </div>
+          <h3 class="step-title">Entender o impacto</h3>
+          <p class="step-text">Avalio o efeito de cada caminho sobre a certidão, o fluxo de caixa e a operação, para que a decisão seja tomada com esses dados à vista.</p>
+        </article>
+
+        <article class="step-card" data-reveal style="--reveal-delay: 240ms">
+          <div class="step-top">
+            <span class="step-num">04</span>
+            <span class="step-label">Execução</span>
+          </div>
+          <h3 class="step-title">Definir os próximos passos</h3>
+          <p class="step-text">As medidas e o eventual acompanhamento são definidos conforme o serviço contratado.</p>
+        </article>
+      </div>
+
+      <div class="contact-panel" data-reveal>
+        <div>
+          <h3 class="contact-panel-title">Como funciona o primeiro contato</h3>
+          <p class="contact-panel-text">Pelo WhatsApp, você me conta brevemente a situação da empresa. Se o caso exigir uma análise jurídica dos débitos, eu apresento uma proposta com o escopo e os honorários antes da contratação.</p>
+          <ul class="contact-panel-points">
+            <li>Atendimento direto com a advogada</li>
+            <li>Clareza de escopo antes de contratar</li>
+            <li>Atendimento online em todo o Brasil</li>
+          </ul>
+        </div>
+
+        <div class="contact-panel-cta">
+          <a class="btn btn--light" href="https://wa.me/5514997485486?text=Ol%C3%A1%2C%20Dra.%20Camila.%20Gostaria%20de%20conversar%20sobre%20a%20situa%C3%A7%C3%A3o%20tribut%C3%A1ria%20da%20minha%20empresa." target="_blank" rel="noopener noreferrer">
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+            <span>Falar sobre a dívida da empresa</span>
+          </a>
+          <span class="contact-panel-phone">WhatsApp: (14) 99748-5486</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quem vai analisar a sua dívida -->
+  <section id="sobre" class="section section--areia">
+    <div class="wrap">
+      <div class="scroll-trace" data-scroll-draw aria-hidden="true" style="margin-bottom: 28px;">
+        <svg viewBox="0 0 1140 42" fill="none">
+          <path class="trace-line" vector-effect="non-scaling-stroke" d="M 1140 12 L 780 12 C 720 12 690 32 630 32 L 0 32"/>
+          <path class="trace-line trace-line--soft" vector-effect="non-scaling-stroke" d="M 1140 20 L 820 20"/>
+        </svg>
+      </div>
+    </div>
+    <div class="wrap about-grid">
+      <div class="about-media" data-reveal>
+        <div class="about-frame">
+          <picture>
+            <source srcset="assets/sobre.webp" type="image/webp">
+            <img src="assets/sobre.jpg" width="1455" height="1314" loading="lazy" alt="Camila Ananias Pedron trabalhando no notebook">
+          </picture>
+        </div>
+      </div>
+
+      <div class="about-content" data-reveal style="--reveal-delay: 100ms">
+        <div>
+          <p class="eyebrow">Atuação jurídica</p>
+          <h2 class="h2">Quem vai analisar a sua dívida</h2>
+        </div>
+
+        <p class="about-text">Sou Camila Ananias Pedron, advogada inscrita na OAB/SP sob o nº 545.089, com atuação em direito tributário. Atendo empresas de todo o Brasil de forma online, a partir de Ourinhos/SP.</p>
+
+        <p class="about-text">Meu trabalho começa por entender como a dívida se formou, onde ela está sendo cobrada e o que a empresa precisa resolver primeiro. Só depois disso faz sentido falar em transação, parcelamento ou defesa.</p>
+
+        <div class="credentials-grid">
+          <div class="credential-item">
+            <span class="credential-label">Registro profissional</span>
+            <span class="credential-value">OAB/SP 545.089</span>
+          </div>
+          <div class="credential-item">
+            <span class="credential-label">Área de atuação</span>
+            <span class="credential-value">Direito Tributário</span>
+          </div>
+          <div class="credential-item">
+            <span class="credential-label">Sede</span>
+            <span class="credential-value">Ourinhos / SP</span>
+          </div>
+          <div class="credential-item">
+            <span class="credential-label">Formato de atendimento</span>
+            <span class="credential-value">Online para todo o Brasil</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Outras áreas de atuação -->
+  <section id="outras-areas" class="section section--marfim">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <p class="eyebrow">Demais frentes tributárias</p>
+        <h2 class="h2">Outras áreas de atuação</h2>
+        <p class="section-lead">Além da análise de dívidas fiscais, o atendimento também abrange demandas tributárias específicas para empresas e pessoas físicas.</p>
+      </div>
+
+      <div class="areas-grid">
+        <a class="area-card" data-reveal style="--reveal-delay: 0ms" href="https://wa.me/5514997485486?text=Ol%C3%A1%2C%20Dra.%20Camila.%20Gostaria%20de%20conversar%20sobre%20recupera%C3%A7%C3%A3o%20de%20tributos%20no%20Simples%20Nacional." target="_blank" rel="noopener noreferrer">
+          <div>
+            <span class="area-tag">Empresas · Simples Nacional</span>
+            <h3 class="area-title">Recuperação de tributos no Simples Nacional</h3>
+            <p class="area-desc">Para empresas que revendem produtos de tributação monofásica.</p>
+          </div>
+          <span class="area-cta">
+            <span>Sobre recuperação de tributos</span>
+            <span class="area-cta-arrow" aria-hidden="true">→</span>
+          </span>
+        </a>
+
+        <a class="area-card" data-reveal style="--reveal-delay: 90ms" href="https://wa.me/5514997485486?text=Ol%C3%A1%2C%20Dra.%20Camila.%20Gostaria%20de%20conversar%20sobre%20isen%C3%A7%C3%A3o%20de%20imposto%20de%20renda." target="_blank" rel="noopener noreferrer">
+          <div>
+            <span class="area-tag">Pessoa Física</span>
+            <h3 class="area-title">Isenção de imposto de renda</h3>
+            <p class="area-desc">Para aposentados e pensionistas com moléstia grave.</p>
+          </div>
+          <span class="area-cta">
+            <span>Sobre isenção de IR</span>
+            <span class="area-cta-arrow" aria-hidden="true">→</span>
+          </span>
+        </a>
+
+        <a class="area-card" data-reveal style="--reveal-delay: 180ms" href="https://wa.me/5514997485486?text=Ol%C3%A1%2C%20Dra.%20Camila.%20Gostaria%20de%20conversar%20sobre%20planejamento%20tribut%C3%A1rio." target="_blank" rel="noopener noreferrer">
+          <div>
+            <span class="area-tag">Gestão Empresarial</span>
+            <h3 class="area-title">Planejamento tributário</h3>
+            <p class="area-desc">Organização da carga tributária da empresa.</p>
+          </div>
+          <span class="area-cta">
+            <span>Sobre planejamento tributário</span>
+            <span class="area-cta-arrow" aria-hidden="true">→</span>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Perguntas Frequentes -->
+  <section id="duvidas" class="section section--areia">
+    <div class="wrap">
+      <div class="scroll-trace" data-scroll-draw aria-hidden="true" style="margin-bottom: 26px;">
+        <svg viewBox="0 0 1140 36" fill="none">
+          <path class="trace-line" vector-effect="non-scaling-stroke" d="M 0 18 Q 285 4 570 18 T 1140 18"/>
+          <path class="trace-line trace-node" vector-effect="non-scaling-stroke" d="M 562 18 L 570 10 L 578 18 L 570 26 Z"/>
+        </svg>
+      </div>
+    </div>
+    <div class="wrap faq-layout">
+      <div data-reveal>
+        <p class="eyebrow">Dúvidas comuns</p>
+        <h2 class="h2">Perguntas frequentes sobre o atendimento</h2>
+        <p class="section-lead">Informações objetivas para você entender como ocorre o contato inicial, a análise dos débitos e a atuação online.</p>
+      </div>
+
+      <div class="faq-list">
+        <details class="faq-item" data-reveal style="--reveal-delay: 0ms" open>
+          <summary class="faq-summary">
+            <span>Como funciona o atendimento online para empresas fora de Ourinhos/SP?</span>
+            <span class="faq-toggle" aria-hidden="true"></span>
+          </summary>
+          <div class="faq-answer">
+            <p>Todo o atendimento — do contato inicial pelo WhatsApp à apresentação da análise e das medidas jurídicas — é conduzido de forma online para empresas em qualquer estado do Brasil, com reuniões por vídeo e envio digital de documentos.</p>
+          </div>
+        </details>
+
+        <details class="faq-item" data-reveal style="--reveal-delay: 70ms">
+          <summary class="faq-summary">
+            <span>Preciso ter todos os documentos separados antes de mandar mensagem?</span>
+            <span class="faq-toggle" aria-hidden="true"></span>
+          </summary>
+          <div class="faq-answer">
+            <p>Não. No primeiro contato pelo WhatsApp, basta relatar brevemente qual é a situação da empresa (por exemplo, necessidade de certidão, cobrança na Receita/PGFN ou execução fiscal) para orientarmos o que precisa ser verificado.</p>
+          </div>
+        </details>
+
+        <details class="faq-item" data-reveal style="--reveal-delay: 140ms">
+          <summary class="faq-summary">
+            <span>Por que a análise diferencia débitos na Receita Federal e na PGFN?</span>
+            <span class="faq-toggle" aria-hidden="true"></span>
+          </summary>
+          <div class="faq-answer">
+            <p>Porque o estágio da cobrança define as ferramentas jurídicas disponíveis. Débitos em cobrança administrativa na Receita Federal seguem regras distintas daqueles já inscritos em dívida ativa na PGFN ou ajuizados em execução fiscal.</p>
+          </div>
+        </details>
+
+        <details class="faq-item" data-reveal style="--reveal-delay: 210ms">
+          <summary class="faq-summary">
+            <span>Quando são apresentados o escopo e os honorários?</span>
+            <span class="faq-toggle" aria-hidden="true"></span>
+          </summary>
+          <div class="faq-answer">
+            <p>Após você apresentar brevemente o cenário pelo WhatsApp, caso o problema demande análise jurídica dos débitos ou acompanhamento específico, uma proposta com o escopo definido e os honorários é enviada antes de qualquer contratação.</p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Final com Retrato Editorial -->
+  <section id="contato" class="section section--vinho">
+    <div class="wrap final-cta-grid">
+      <div class="final-cta" data-reveal>
+        <p class="eyebrow">Primeiro contato</p>
+        <h2 class="h2">Qual é a prioridade da sua empresa hoje?</h2>
+        <p class="final-cta-text">Conte brevemente a situação atual pelo WhatsApp para iniciar o entendimento do caso e receber orientação sobre os próximos passos.</p>
+        <a class="btn btn--light" href="https://wa.me/5514997485486?text=Ol%C3%A1%2C%20Dra.%20Camila.%20Gostaria%20de%20conversar%20sobre%20a%20situa%C3%A7%C3%A3o%20tribut%C3%A1ria%20da%20minha%20empresa." target="_blank" rel="noopener noreferrer">
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          <span>Falar sobre a dívida da empresa</span>
+        </a>
+        <span class="final-cta-note">Primeiro contato pelo WhatsApp · (14) 99748-5486</span>
+      </div>
+
+      <div class="portrait-showcase" data-reveal style="--reveal-delay: 120ms">
+        <svg class="portrait-trace-svg" data-scroll-draw viewBox="0 0 380 470" preserveAspectRatio="none" fill="none" aria-hidden="true">
+          <path class="trace-line trace-line--light" vector-effect="non-scaling-stroke" d="M 10 460 L 10 188 A 180 180 0 0 1 370 188 L 370 460 Z"/>
+        </svg>
+        <div class="portrait-arch">
+          <img src="assets/camila-contato.jpg" width="472" height="1024" loading="lazy" alt="Dra. Camila Ananias Pedron em atendimento">
+          <div class="portrait-badge">
+            <span class="portrait-badge-name">Camila Ananias Pedron</span>
+            <span class="portrait-badge-meta">Atendimento direto · OAB/SP 545.089</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="scroll-trace footer-trace" data-scroll-draw aria-hidden="true">
+      <svg viewBox="0 0 1140 32" fill="none">
+        <path class="trace-line" vector-effect="non-scaling-stroke" d="M 556 16 L 0 16"/>
+        <path class="trace-line" vector-effect="non-scaling-stroke" d="M 584 16 L 1140 16"/>
+        <path class="trace-line trace-node" vector-effect="non-scaling-stroke" d="M 570 7 L 579 16 L 570 25 L 561 16 Z"/>
       </svg>
     </div>
-  </div>
-</section>
-
-<div class="section-divider"></div>
-
-<!-- PROBLEMA -->
-<section class="problema" id="problema">
-  <div class="problema-grid">
-    <div class="reveal">
-      <div class="section-label"><span>Você se identifica?</span></div>
-      <h2>Tributos que consomem o lucro do seu negócio</h2>
-      <p>
-        O sistema tributário brasileiro é um dos mais complexos do mundo. Sem orientação especializada, empresas pagam mais do que devem — e ficam vulneráveis a autuações fiscais que poderiam ter sido evitadas.
-      </p>
+    <div class="footer-grid" data-reveal>
+      <div>
+        <div class="footer-brand">Camila Ananias Pedron · Advogada · OAB/SP 545.089</div>
+        <div class="footer-info">Ourinhos/SP · Atendimento online em todo o Brasil</div>
+      </div>
+      <div class="footer-links">
+        <a href="https://wa.me/5514997485486?text=Ol%C3%A1%2C%20Dra.%20Camila.%20Gostaria%20de%20conversar%20sobre%20a%20situa%C3%A7%C3%A3o%20tribut%C3%A1ria%20da%20minha%20empresa." target="_blank" rel="noopener noreferrer">WhatsApp: (14) 99748-5486</a>
+        <a href="https://www.instagram.com/camilapedron_tributario/" target="_blank" rel="noopener noreferrer">Instagram: @camilapedron_tributario</a>
+      </div>
     </div>
-    <div class="dores-list reveal">
-      <div class="dor-item">
-        <div class="dor-icon">
-          <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-        </div>
-        <div class="dor-text">
-          <strong>Carga tributária elevada</strong>
-          <p>Sua empresa paga tributos sem saber se está aproveitando todos os benefícios fiscais e regimes especiais disponíveis em lei.</p>
-        </div>
-      </div>
-      <div class="dor-item">
-        <div class="dor-icon">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-        </div>
-        <div class="dor-text">
-          <strong>Risco de autuação fiscal</strong>
-          <p>Pendências com o Fisco geram juros, multas e, nos casos mais graves, comprometem a continuidade do negócio.</p>
-        </div>
-      </div>
-      <div class="dor-item">
-        <div class="dor-icon">
-          <svg viewBox="0 0 24 24"><path d="M14.5 10c-.83 0-1.5-.67-1.5-1.5v-5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5z"/><path d="M20.5 10H19V8.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/><path d="M9.5 14c.83 0 1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5S8 21.33 8 20.5v-5c0-.83.67-1.5 1.5-1.5z"/><path d="M3.5 14H5v1.5c0 .83-.67 1.5-1.5 1.5S2 16.33 2 15.5 2.67 14 3.5 14z"/><path d="M14 14.5c0-.83.67-1.5 1.5-1.5h5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5h-5c-.83 0-1.5-.67-1.5-1.5z"/><path d="M15.5 19H14v1.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5-.67-1.5-1.5-1.5z"/><path d="M10 9.5C10 8.67 9.33 8 8.5 8h-5C2.67 8 2 8.67 2 9.5S2.67 11 3.5 11h5c.83 0 1.5-.67 1.5-1.5z"/><path d="M8.5 5H10V3.5C10 2.67 9.33 2 8.5 2S7 2.67 7 3.5 7.67 5 8.5 5z"/></svg>
-        </div>
-        <div class="dor-text">
-          <strong>Planejamento tributário inexistente</strong>
-          <p>Decisões financeiras tomadas sem orientação jurídica criam passivos fiscais que se acumulam silenciosamente.</p>
-        </div>
-      </div>
+    <div class="footer-disclaimer" data-reveal style="--reveal-delay: 100ms">
+      Conteúdo informativo, sem promessa de resultado. Não substitui a análise individual de cada caso.
     </div>
   </div>
-</section>
-
-<div class="section-divider"></div>
-
-<!-- SERVIÇOS -->
-<section class="servicos" id="servicos">
-  <div class="servicos-header reveal">
-    <div class="section-label" style="justify-content:center"><span>Área de Atuação</span></div>
-    <h2>Soluções tributárias que protegem e economizam</h2>
-    <p>Cada caso é único. Por isso, cada estratégia é construída sob medida — com rigor técnico e foco em resultados concretos.</p>
-  </div>
-  <div class="servicos-grid">
-    <div class="servico-card reveal">
-      <div class="servico-num">01</div>
-      <div class="servico-icon">
-        <svg viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
-      </div>
-      <h3>Planejamento Tributário</h3>
-      <p>Análise completa da estrutura fiscal da empresa para identificar oportunidades legais de redução da carga tributária.</p>
-    </div>
-    <div class="servico-card reveal">
-      <div class="servico-num">02</div>
-      <div class="servico-icon">
-        <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-      </div>
-      <h3>Defesa em Processos Administrativos</h3>
-      <p>Representação e defesa técnica em autuações fiscais perante a Receita Federal, Estadual e Municipal.</p>
-    </div>
-    <div class="servico-card reveal">
-      <div class="servico-num">03</div>
-      <div class="servico-icon">
-        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-      </div>
-      <h3>Revisão de Tributos Pagos a Maior</h3>
-      <p>Identificação e recuperação de valores pagos indevidamente ao Fisco — com base em análise minuciosa da escrituração fiscal.</p>
-    </div>
-    <div class="servico-card reveal">
-      <div class="servico-num">04</div>
-      <div class="servico-icon">
-        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-      </div>
-      <h3>Contencioso Tributário Judicial</h3>
-      <p>Atuação estratégica em ações judiciais tributárias: mandado de segurança, embargos, ações declaratórias e repetição de indébito.</p>
-    </div>
-    <div class="servico-card reveal">
-      <div class="servico-num">05</div>
-      <div class="servico-icon">
-        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
-      </div>
-      <h3>Consultoria para Holdings e Reestruturação</h3>
-      <p>Estruturação patrimonial e societária com eficiência fiscal — protegendo o patrimônio da família e da empresa.</p>
-    </div>
-    <div class="servico-card reveal">
-      <div class="servico-num">06</div>
-      <div class="servico-icon">
-        <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-      </div>
-      <h3>Regularização Fiscal</h3>
-      <p>Diagnóstico e solução de pendências com o Fisco — parcelamentos, certidões negativas e recuperação de compliance.</p>
-    </div>
-  </div>
-</section>
-
-<!-- PROVA SOCIAL -->
-<section class="prova-social" id="depoimentos">
-  <div class="prova-header reveal">
-    <div class="section-label" style="justify-content:center"><span style="color:rgba(208,173,146,0.7)">Resultados Reais</span></div>
-    <h2>O que dizem os clientes</h2>
-    <p>Testimonials reais. Nomes preservados por ética profissional.</p>
-  </div>
-  <div class="depoimentos-grid">
-    <div class="depoimento reveal">
-      <p>"Com o planejamento tributário da Dra. Camila, nossa empresa reduziu em 30% a carga de tributos no primeiro ano. Técnica, objetiva e sempre disponível."</p>
-      <div class="dep-autor">
-        <div class="dep-avatar">MR</div>
-        <div class="dep-info">
-          <strong>M. Rodrigues</strong>
-          <span>Empresário · Indústria</span>
-        </div>
-      </div>
-    </div>
-    <div class="depoimento reveal">
-      <p>"Tínhamos um processo de autuação que parecia sem saída. A Dra. Camila construiu uma defesa impecável e conseguimos êxito total no CARF. Profissional excepcional."</p>
-      <div class="dep-autor">
-        <div class="dep-avatar">AS</div>
-        <div class="dep-info">
-          <strong>A. Silveira</strong>
-          <span>CFO · Tecnologia</span>
-        </div>
-      </div>
-    </div>
-    <div class="depoimento reveal">
-      <p>"A revisão tributária identificou créditos que nunca imaginávamos ter. Recuperamos valores significativos e hoje temos um planejamento tributário sólido."</p>
-      <div class="dep-autor">
-        <div class="dep-avatar">CF</div>
-        <div class="dep-info">
-          <strong>C. Ferreira</strong>
-          <span>Sócio · Comércio</span>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="numeros-row reveal">
-    <div class="numero-item">
-      <span class="numero-val">+500</span>
-      <span class="numero-desc">Empresas atendidas</span>
-    </div>
-    <div class="numero-item">
-      <span class="numero-val">R$ 10M+</span>
-      <span class="numero-desc">Recuperados para clientes</span>
-    </div>
-    <div class="numero-item">
-      <span class="numero-val">8+</span>
-      <span class="numero-desc">Anos de experiência</span>
-    </div>
-    <div class="numero-item">
-      <span class="numero-val">98%</span>
-      <span class="numero-desc">Clientes satisfeitos</span>
-    </div>
-  </div>
-</section>
-
-<!-- SOBRE -->
-<section class="sobre" id="sobre">
-  <div class="sobre-grid">
-    <div class="sobre-foto-wrap reveal">
-      <div class="sobre-foto-placeholder">
-        <!-- Substitua por: <img src="foto-camila.jpg" style="width:100%;height:100%;object-fit:cover;"> -->
-        <div class="foto-initials">
-          
-          <img style="width:100%;height:100%;object-fit:cover;" src="camila.jpeg" alt="">
-        </div>
-      </div>
-      <div class="foto-destaque">
-        <strong>OAB/SP</strong>
-        <span>Advogada Tributarista</span>
-      </div>
-    </div>
-    <div class="sobre-content reveal">
-      <div class="section-label"><span>Sobre</span></div>
-      <h2>Dra. Camila<br>Ananias Pedron</h2>
-      <p class="sobre-nome-sub">Advogada Tributarista · OAB/SP</p>
-      <p class="sobre-text">
-        Com mais de 8 anos de atuação exclusiva em Direito Tributário, a Dra. Camila construiu uma trajetória marcada por resultados concretos para empresas de todos os portes — do pequeno empresário ao grupo empresarial.
-      </p>
-      <p class="sobre-text">
-        Sua abordagem combina profundo conhecimento técnico com uma escuta ativa das necessidades do cliente. Cada caso recebe atenção personalizada, com estratégias construídas para gerar segurança jurídica e economia tributária real.
-      </p>
-      <div class="sobre-credentials">
-        <div class="cred-item">
-          <div class="cred-dot"></div>
-          <span>Especialização em Direito Tributário</span>
-        </div>
-        <div class="cred-item">
-          <div class="cred-dot"></div>
-          <span>Pós-graduação em Planejamento Tributário</span>
-        </div>
-        <div class="cred-item">
-          <div class="cred-dot"></div>
-          <span>Atuação em Contencioso Administrativo e Judicial</span>
-        </div>
-        <div class="cred-item">
-          <div class="cred-dot"></div>
-          <span>Membro da Comissão de Direito Tributário da OAB</span>
-        </div>
-        <div class="cred-item">
-          <div class="cred-dot"></div>
-          <span>Palestrante em eventos jurídicos e empresariais</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="section-divider"></div>
-
-<!-- DIFERENCIAIS -->
-<section class="diferenciais">
-  <div class="diferenciais-header reveal">
-    <div class="section-label" style="justify-content:center"><span>Por que escolher</span></div>
-    <h2>O que torna nossa atuação diferente</h2>
-    <p>Advocacia tributária com excelência técnica e compromisso com resultados tangíveis para cada cliente.</p>
-  </div>
-  <div class="diferenciais-grid">
-    <div class="diferencial-item reveal">
-      <div class="diferencial-num">01</div>
-      <div class="diferencial-text">
-        <h3>Exclusividade em Tributário</h3>
-        <p>Atuação 100% focada em Direito Tributário — sem generalismo. Especialização que se traduz em soluções mais precisas e eficazes para cada tipo de demanda fiscal.</p>
-      </div>
-    </div>
-    <div class="diferencial-item reveal">
-      <div class="diferencial-num">02</div>
-      <div class="diferencial-text">
-        <h3>Atendimento Personalizado</h3>
-        <p>Cada cliente tem acesso direto à Dra. Camila. Sem estagiários no seu caso. Comunicação clara, retornos rápidos e total transparência no andamento dos processos.</p>
-      </div>
-    </div>
-    <div class="diferencial-item reveal">
-      <div class="diferencial-num">03</div>
-      <div class="diferencial-text">
-        <h3>Diagnóstico Gratuito</h3>
-        <p>Primeira consulta sem custo: análise do cenário tributário da sua empresa para identificar riscos e oportunidades antes de qualquer compromisso.</p>
-      </div>
-    </div>
-    <div class="diferencial-item reveal">
-      <div class="diferencial-num">04</div>
-      <div class="diferencial-text">
-        <h3>Visão Estratégica + Preventiva</h3>
-        <p>Não apenas resolvemos problemas: antecipamos riscos. O trabalho preventivo evita autuações, multas e litígios que custam muito mais do que a consultoria regular.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA FINAL -->
-<section class="cta-section" id="contato">
-  <div class="cta-grid">
-    <div class="cta-content reveal">
-      <div class="section-label"><span style="color:rgba(208,173,146,0.7)">Dê o primeiro passo</span></div>
-      <h2>Sua empresa pode<br><em>pagar menos tributos</em><br>ainda este ano.</h2>
-      <p>
-        Não espere uma autuação ou um problema fiscal para buscar orientação especializada. O momento certo é agora — quando ainda há tempo para agir de forma estratégica.
-      </p>
-      <a href="https://wa.me/5500000000000?text=Olá%20Dra.%20Camila,%20gostaria%20de%20agendar%20uma%20consulta%20tributária%20gratuita." class="cta-wpp" target="_blank">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-        Falar pelo WhatsApp
-      </a>
-      <p class="cta-alt">Resposta em até 24 horas · Sigilo absoluto garantido</p>
-    </div>
-    <div class="cta-form reveal">
-      <p class="form-title">Formulário de Contato</p>
-      <form onsubmit="handleSubmit(event)">
-        <div class="form-group">
-          <label>Nome completo</label>
-          <input type="text" placeholder="Seu nome" required>
-        </div>
-        <div class="form-group">
-          <label>E-mail</label>
-          <input type="email" placeholder="seu@email.com" required>
-        </div>
-        <div class="form-group">
-          <label>Telefone / WhatsApp</label>
-          <input type="tel" placeholder="(00) 00000-0000">
-        </div>
-        <div class="form-group">
-          <label>Tipo de demanda</label>
-          <select>
-            <option value="">Selecione uma opção</option>
-            <option>Planejamento Tributário</option>
-            <option>Defesa em Autuação Fiscal</option>
-            <option>Revisão de Tributos Pagos a Maior</option>
-            <option>Contencioso Tributário Judicial</option>
-            <option>Holding e Reestruturação Societária</option>
-            <option>Regularização Fiscal</option>
-            <option>Outro</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Mensagem (opcional)</label>
-          <textarea placeholder="Descreva brevemente sua situação..."></textarea>
-        </div>
-        <button type="submit" class="form-submit">Solicitar Consulta Gratuita</button>
-        <p class="form-disclaimer">Seus dados são tratados com total confidencialidade, em conformidade com a LGPD.</p>
-      </form>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-logo">
-    Camila Ananias Pedron
-    <span>Advocacia Tributária</span>
-  </div>
-  <p>© 2024 · Todos os direitos reservados · Este site não constitui consultoria jurídica</p>
-  <p class="footer-oab">OAB/SP · Direito Tributário</p>
 </footer>
 
-<!-- FLOATING WHATSAPP -->
-<a href="https://wa.me/5500000000000?text=Olá%20Dra.%20Camila,%20gostaria%20de%20uma%20consulta." class="wpp-float" target="_blank" title="Falar pelo WhatsApp">
-  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+<a class="whatsapp-float" href="https://wa.me/5514997485486?text=Ol%C3%A1%2C%20Dra.%20Camila.%20Gostaria%20de%20conversar%20sobre%20a%20situa%C3%A7%C3%A3o%20tribut%C3%A1ria%20da%20minha%20empresa." target="_blank" rel="noopener noreferrer" aria-label="Chamar Dra. Camila Ananias Pedron no WhatsApp">
+  <span class="whatsapp-float-icon" aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 2c-5.516 0-9.969 4.453-9.969 9.969 0 1.766.469 3.484 1.344 5l-1.406 5.156 5.281-1.375c1.469.797 3.109 1.219 4.75 1.219 5.516 0 9.969-4.453 9.969-9.969S17.547 2 12.031 2zm5.813 14.125c-.25.703-1.438 1.344-2 1.422-.531.078-1.203.109-1.938-.125-.453-.141-1.031-.344-1.766-.656-3.094-1.328-5.109-4.453-5.266-4.656-.156-.203-1.266-1.688-1.266-3.219 0-1.531.797-2.281 1.078-2.594.281-.313.625-.391.828-.391.203 0 .406.016.594.016.188 0 .453-.078.703.531.25.609.859 2.094.938 2.25.078.156.125.344.031.547-.094.203-.156.344-.313.531-.156.188-.328.406-.469.547-.156.156-.313.328-.141.641.172.313.781 1.297 1.688 2.109 1.156 1.031 2.141 1.359 2.453 1.516.313.156.5.125.688-.078.188-.203.797-.938 1.016-1.25.219-.313.422-.266.719-.156.297.109 1.875.891 2.203 1.047.328.156.547.234.625.375.078.141.078.813-.172 1.516z"/></svg>
+  </span>
+  <span class="whatsapp-float-text">
+    <span class="whatsapp-float-label">Chamar no WhatsApp</span>
+    <span class="whatsapp-float-sub">(14) 99748-5486</span>
+  </span>
 </a>
 
 <script>
-  // Navbar scroll
-  const navbar = document.getElementById('navbar');
-  window.addEventListener('scroll', () => {
-    navbar.classList.toggle('scrolled', window.scrollY > 40);
-  });
+  (function () {
+    var SVG_NS = 'http://www.w3.org/2000/svg';
+    var header = document.querySelector('.site-header');
+    var mainEl = document.getElementById('conteudo-principal');
+    var footerEl = document.querySelector('.site-footer');
+    var spineWrap = document.getElementById('page-spine');
+    var spineSvg = document.getElementById('page-spine-svg');
+    var spineGhost = document.getElementById('spine-ghost');
+    var spineActive = document.getElementById('spine-active');
+    var spineNodes = document.getElementById('spine-nodes');
+    var spineCursor = document.getElementById('spine-cursor');
+    var spineHalo = document.getElementById('spine-cursor-halo');
 
-  // Scroll reveal
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, i) => {
-      if (entry.isIntersecting) {
-        setTimeout(() => entry.target.classList.add('visible'), i * 80);
-        observer.unobserve(entry.target);
+    var prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var items = document.querySelectorAll('[data-reveal]');
+    var drawGroups = document.querySelectorAll('[data-scroll-draw]');
+    var drawItems = [];
+    var spineState = {
+      top: 0,
+      height: 0,
+      len: 0,
+      milestones: [],
+      target: 0,
+      current: 0
+    };
+
+    /* Clona traçados principais com feixe luminoso contínuo + prepara desenho por scroll */
+    if (!prefersReduced && drawGroups.length) {
+      drawGroups.forEach(function (group) {
+        var svg = group.tagName.toLowerCase() === 'svg' ? group : group.querySelector('svg');
+        var shapes = group.querySelectorAll('path, line, circle, rect, polyline, polygon');
+        var groupShapes = [];
+
+        shapes.forEach(function (shape, idx) {
+          if (typeof shape.getTotalLength === 'function') {
+            var len = shape.getTotalLength();
+            if (len > 0) {
+              shape.style.strokeDasharray = len.toFixed(2);
+              shape.style.strokeDashoffset = len.toFixed(2);
+              groupShapes.push({ el: shape, len: len });
+
+              if (shape.classList.contains('trace-line') && !shape.classList.contains('trace-node') && !shape.classList.contains('trace-line--soft') && shape.parentNode) {
+                var shimmer = shape.cloneNode(false);
+                shimmer.setAttribute('class', 'trace-shimmer');
+                shimmer.style.strokeDasharray = '46 1200';
+                shimmer.style.strokeDashoffset = '';
+                shimmer.style.animationDelay = (idx * -1.4) + 's';
+                shape.parentNode.appendChild(shimmer);
+              }
+            }
+          }
+        });
+
+        if (groupShapes.length) {
+          drawItems.push({
+            group: group,
+            svg: svg,
+            isPortrait: group.classList.contains('portrait-trace-svg'),
+            shapes: groupShapes,
+            target: 0,
+            current: 0
+          });
+        }
+      });
+    }
+
+    /* Constrói dinamicamente a trilha minimalista contínua do header até o footer */
+    function buildSpine() {
+      if (!spineWrap || !spineSvg || !mainEl || !footerEl || !spineGhost || !spineActive || !spineNodes) return;
+
+      var scrollTop = window.scrollY || window.pageYOffset || 0;
+      var mainRect = mainEl.getBoundingClientRect();
+      var footerRect = footerEl.getBoundingClientRect();
+      var startTop = Math.round(mainRect.top + scrollTop);
+      var endBottom = Math.round(footerRect.bottom + scrollTop - 24);
+      var totalH = Math.max(endBottom - startTop, 200);
+
+      spineState.top = startTop;
+      spineState.height = totalH;
+      spineWrap.style.top = startTop + 'px';
+      spineWrap.style.height = totalH + 'px';
+      spineSvg.setAttribute('viewBox', '0 0 32 ' + totalH);
+
+      var targets = document.querySelectorAll('#topo, #situacoes, #como-funciona, #sobre, #outras-areas, #duvidas, #contato, .site-footer');
+      var yList = [];
+      targets.forEach(function (sec) {
+        var r = sec.getBoundingClientRect();
+        var y = Math.round((r.top + scrollTop) - startTop + 28);
+        if (y > 24 && y < totalH - 28) {
+          yList.push(y);
+        }
+      });
+
+      var d = 'M 10 0';
+      spineNodes.innerHTML = '';
+      spineState.milestones = [];
+
+      yList.forEach(function (y) {
+        var y1 = Math.max(12, y - 14);
+        var y2 = y - 5;
+        var y3 = y + 13;
+        var y4 = y + 22;
+
+        d += ' L 10 ' + y1 + ' L 21 ' + y2 + ' L 21 ' + y3 + ' L 10 ' + y4;
+
+        var g = document.createElementNS(SVG_NS, 'g');
+        g.setAttribute('class', 'spine-milestone');
+
+        var tick = document.createElementNS(SVG_NS, 'path');
+        tick.setAttribute('class', 'spine-tick');
+        tick.setAttribute('vector-effect', 'non-scaling-stroke');
+        tick.setAttribute('d', 'M 21 ' + (y + 4) + ' L 31 ' + (y + 4));
+
+        var node = document.createElementNS(SVG_NS, 'circle');
+        node.setAttribute('class', 'spine-node');
+        node.setAttribute('vector-effect', 'non-scaling-stroke');
+        node.setAttribute('cx', '21');
+        node.setAttribute('cy', String(y + 4));
+        node.setAttribute('r', '3.2');
+
+        g.appendChild(tick);
+        g.appendChild(node);
+        spineNodes.appendChild(g);
+
+        spineState.milestones.push({ y: y + 4, el: g });
+      });
+
+      d += ' L 10 ' + (totalH - 12) + ' L 18 ' + totalH;
+      spineGhost.setAttribute('d', d);
+      spineActive.setAttribute('d', d);
+
+      var totalLen = spineActive.getTotalLength();
+      spineState.len = totalLen;
+      spineActive.style.strokeDasharray = totalLen.toFixed(2);
+      if (prefersReduced) {
+        spineActive.style.strokeDashoffset = '0';
+        spineState.milestones.forEach(function (m) { m.el.classList.add('is-reached'); });
+      }
+    }
+
+    function computeTargets() {
+      var vh = window.innerHeight || document.documentElement.clientHeight;
+      var scrollTop = window.scrollY || window.pageYOffset || 0;
+      var maxScroll = Math.max(document.documentElement.scrollHeight - vh, 1);
+      var atBottom = (scrollTop + vh) >= (document.documentElement.scrollHeight - 20);
+
+      /* Progresso da trilha vertical contínua acompanhando o scroll */
+      if (spineState.len > 0 && !prefersReduced) {
+        var docProgress = scrollTop / maxScroll;
+        if (atBottom) docProgress = 1;
+        spineState.target = Math.max(0.02, Math.min(1, docProgress));
+      }
+
+      /* Progresso de cada desenho de traçado por seção */
+      var startY = vh * 0.92;
+      var endY = vh * 0.34;
+      var span = Math.max(startY - endY, 1);
+
+      drawItems.forEach(function (item) {
+        var rect = item.group.getBoundingClientRect();
+        var raw = (startY - rect.top) / span;
+        if (atBottom && rect.top < vh) raw = 1;
+        item.target = Math.max(0, Math.min(1, raw));
+      });
+    }
+
+    var rafId = null;
+    function animateFrame() {
+      var needsNext = false;
+
+      if (spineState.len > 0 && !prefersReduced) {
+        var diffSpine = spineState.target - spineState.current;
+        if (Math.abs(diffSpine) > 0.0008) {
+          spineState.current += diffSpine * 0.14;
+          needsNext = true;
+        } else {
+          spineState.current = spineState.target;
+        }
+
+        var drawnLen = spineState.len * spineState.current;
+        spineActive.style.strokeDashoffset = (spineState.len - drawnLen).toFixed(2);
+
+        if (spineCursor && spineHalo && typeof spineActive.getPointAtLength === 'function') {
+          var pt = spineActive.getPointAtLength(Math.min(drawnLen, spineState.len));
+          spineCursor.setAttribute('cx', pt.x.toFixed(1));
+          spineCursor.setAttribute('cy', pt.y.toFixed(1));
+          spineHalo.setAttribute('cx', pt.x.toFixed(1));
+          spineHalo.setAttribute('cy', pt.y.toFixed(1));
+
+          spineState.milestones.forEach(function (m) {
+            if (pt.y >= m.y - 6) {
+              m.el.classList.add('is-reached');
+            } else {
+              m.el.classList.remove('is-reached');
+            }
+          });
+        }
+      }
+
+      var vh = window.innerHeight || document.documentElement.clientHeight;
+      drawItems.forEach(function (item) {
+        var diff = item.target - item.current;
+        if (Math.abs(diff) > 0.001) {
+          item.current += diff * 0.13;
+          needsNext = true;
+        } else {
+          item.current = item.target;
+        }
+
+        var eased = item.current * (2 - item.current);
+        item.shapes.forEach(function (s) {
+          s.el.style.strokeDashoffset = (s.len * (1 - eased)).toFixed(2);
+        });
+
+        /* Movimento sutil de parallax vertical nos traços horizontais */
+        if (item.svg && !item.isPortrait) {
+          var rect = item.group.getBoundingClientRect();
+          var centerRatio = ((rect.top + rect.height * 0.5) / vh) - 0.5;
+          var shift = Math.max(-10, Math.min(10, centerRatio * -16));
+          item.svg.style.transform = 'translateY(' + shift.toFixed(2) + 'px)';
+        }
+      });
+
+      if (needsNext) {
+        rafId = window.requestAnimationFrame(animateFrame);
+      } else {
+        rafId = null;
+      }
+    }
+
+    function requestTick() {
+      computeTargets();
+      if (!rafId && !prefersReduced) {
+        rafId = window.requestAnimationFrame(animateFrame);
+      }
+    }
+
+    function onScroll() {
+      if (header) {
+        if (window.scrollY > 16) {
+          header.classList.add('is-scrolled');
+        } else {
+          header.classList.remove('is-scrolled');
+        }
+      }
+      requestTick();
+    }
+
+    buildSpine();
+    onScroll();
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', function () {
+      buildSpine();
+      requestTick();
+    }, { passive: true });
+    window.addEventListener('load', function () {
+      buildSpine();
+      requestTick();
+    });
+
+    document.querySelectorAll('.faq-item').forEach(function (det) {
+      det.addEventListener('toggle', function () {
+        window.requestAnimationFrame(function () {
+          buildSpine();
+          requestTick();
+        });
+      });
+    });
+
+    if (!items.length || prefersReduced) return;
+
+    if (!('IntersectionObserver' in window)) {
+      items.forEach(function (el) { el.classList.add('is-visible'); });
+      return;
+    }
+
+    document.documentElement.classList.add('has-reveal');
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
+
+    items.forEach(function (el) {
+      var rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight * 0.92) {
+        el.classList.add('is-visible');
+      } else {
+        observer.observe(el);
       }
     });
-  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-
-  reveals.forEach(el => observer.observe(el));
-
-  // Form submit
-  function handleSubmit(e) {
-    e.preventDefault();
-    const btn = e.target.querySelector('.form-submit');
-    btn.textContent = '✓ Mensagem enviada!';
-    btn.style.background = '#3a7d44';
-    btn.style.color = '#fff';
-    btn.disabled = true;
-    setTimeout(() => {
-      btn.textContent = 'Solicitar Consulta Gratuita';
-      btn.style.background = '';
-      btn.style.color = '';
-      btn.disabled = false;
-      e.target.reset();
-    }, 3500);
-  }
+  })();
 </script>
+
 </body>
 </html>
